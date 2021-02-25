@@ -1,0 +1,110 @@
+/* pages/shield/shield.wxss */
+
+.searchBarView {
+  position: fixed;
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  height: 70rpx;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBar {
+  width: 600rpx;
+  height: 70rpx;
+  background: rgba(245, 245, 245, 1);
+  border-radius: 10rpx;
+  display: flex;
+  padding-left: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+}
+
+.topBlueView {
+  background-color: #5869B4;
+  width: 750rpx;
+  height: 180rpx;
+  top: 70rpx;
+   position: relative;
+
+}
+.topBlueView .contentLabel {
+  color: white;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:600; 
+  position: absolute;
+  margin-top: 53rpx;
+  margin-left: 30rpx;
+  width: 545rpx;
+}
+.topBlueView .rightImageView {
+  width: 99rpx;
+  height: 103rpx;
+  margin-left: 631rpx;
+  margin-top: 67rpx;
+}
+.scrollView {
+  width: 750rpx;
+  margin-left: 0rpx;
+  position :relative;
+  margin-top: 70rpx;
+}
+.scrollView .cell {
+  
+}
+.cell .cellImageView {
+  border-radius: 18rpx;
+  position: relative;
+  margin-top: 49rpx;
+  margin-left: 30rpx;
+  width: 130rpx;
+  height: 130rpx;
+  background-color: red;
+}
+.cell .titleLabel {
+  position: absolute;
+  margin-top: 49rpx;
+  font-family: PingFang SC;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 46rpx;
+  font-weight: 500;
+  margin-left: 23rpx;
+}
+.cell .sjImageView {
+  width: 119rpx;
+  height: 29rpx;
+}
+.cell .shImageView {
+  width: 85rpx;
+  height: 29rpx;
+}
+.cell .createTimeLabel {
+  font-size: 24rpx; 
+  font-family:PingFang SC;
+  font-weight:400;
+  color: #999999;
+  margin-left: 23rpx;
+  position: absolute;
+  margin-top: 149rpx;
+}
+.cell .expireTimeLabel {
+  font-size: 24rpx; 
+  font-family:PingFang SC;
+  font-weight:400;
+  color: #999999;
+  
+}
+.cell .distanceLabel {  
+  position: absolute;
+  margin-top: 149rpx;
+  right: 32rpx;
+  font-size: 24rpx; 
+  font-family:PingFang SC;
+  font-weight:400;
+  color: #999999;
+}

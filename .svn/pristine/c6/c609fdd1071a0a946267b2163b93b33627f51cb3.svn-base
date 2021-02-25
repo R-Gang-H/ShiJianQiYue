@@ -1,0 +1,129 @@
+<!--pages/redPacketDetail/redPacketDetail.wxml-->
+
+<!-- 轮播图 -->
+
+<view class="contentView">
+
+	<view class="bannerView">
+
+		<swiper class="banner" indicator-dots="ture" indicator-color="#87E1D5" indicator-active-color="#00BAA1" autoplay="ture" duration="500" interval="2000" circular="true">
+			<block wx:for="{{ model.giftImages }}" wx:key="*this">
+				<swiper-item>
+					<image class="bannerItem" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item }}" mode="aspectFill"> </image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+
+
+	<!-- 简介 -->
+	<view class="introlView">
+
+		<label class="introlTitleLabel">
+			简介
+		</label>
+
+		<label class="introlContentLabel">
+			{{ model.giftDesc}}
+		</label>
+
+	</view>
+
+	<view class="locationView">
+
+		<label class="locationTitleLabel">
+			约会地点
+		</label>
+
+		<label class="locationContentLabel">
+			{{ model.giftAddress}}
+		</label>
+
+		<image class="goThereButton" src="../../images/location_icon.png" catchtap="goLocation">
+		</image>
+	</view>
+
+	<!-- 约会时间 -->
+
+	<view class="timeView">
+
+		<label class="timeTitleLabel">
+			约会时间
+		</label>
+
+		<label class="timeContentLabel">
+			{{ model.customDate }}
+		</label>
+	</view>
+
+<!-- 我发布的信息情况下的应约者列表 -->
+	<view class="myInfoJoinView" wx:if="{{ isMy }}">
+		<label class="timeTitleLabel">
+			应约者（{{model.joinNum}}）人
+		</label>
+		<view class="publisherBorderView" wx:for="{{ model.joinList }}" wx:key="*this">
+
+			<image class="publisherHeadImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.userAvatar }}" catchtap="goPersonDetail" data-userid="{{ item.userId }}">
+			</image>
+			<label class="publisherNameLabel">
+				{{ item.userName }}
+			</label>
+
+			<view class="confirmJoinButton" catchtap="confirmJoinButton" data-model="{{item}}">
+				{{ item.status == 1? "已应约" : "确认应约" }}
+
+			</view>
+		</view>
+
+	</view>
+
+	<!-- 发布者 -->
+
+	<view class="publisherView" wx:if="{{ !isMy }}">
+
+		<label class="publisherTitleLabel">
+			发布者
+		</label>
+
+		<view class="publisherBorderView">
+
+			<image class="publisherHeadImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ model.userAvatar }}" catchtap="goPersonDetail" data-userid="{{ model.userId }}">
+			</image>
+			<label class="publisherNameLabel">
+				{{ model.userName }}
+			</label>
+
+			<view class="attentionButton" catchtap="attentionButtonDidClicked">
+				{{ model.isFollow == 1? "取消关注" : "关注" }}
+
+			</view>
+		</view>
+	</view>
+
+	<view class="QRCodeView" wx:if="{{!needJoin}}">
+		<view class="backgroundWhiteView">
+			<canvas class='canvas' canvas-id='canvas'> </canvas>
+			<!-- <image class="codeImageView" src="{{imgsrc}}">
+</image> -->
+			<label class="codeTitle">
+				申领码
+			</label>
+
+			<label class="codeMessage">
+				凭此申领码，前往红包应约地点，需发布者对您的申领码进行扫描，才能完成红包派发。
+			</label>
+
+		</view>
+
+	</view>
+</view>
+
+
+
+
+<view class="joinButton" wx:if="{{ needJoin }}" bindtap="joinRedPacket">
+	我要应答
+</view>
+<view class="cancel" catchtap="cancelRedPacket" wx:if="{{ isIng }}">撤销</view>
+<view class="cancelIng" wx:if="{{ isCancel }}">撤销中</view>
+<view class="cancelIng" wx:if="{{ isEnd }}">已结束</view>

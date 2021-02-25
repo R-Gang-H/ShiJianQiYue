@@ -1,0 +1,684 @@
+/* pages/marketDeatil/marketD.wxss */
+/* 轮播图 */
+.banner {
+  width: 750rpx;
+  height: 938rpx;
+}
+
+.bannerItem {
+  width: 750rpx;
+  height: 938rpx;
+}
+
+.viewTop {
+  width: 100%;
+  height: 200rpx;
+}
+
+
+.viewContent{
+  padding-bottom: 98rpx;
+}
+/* 标题 */
+.viewHead {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 35rpx;
+  margin-bottom: 15rpx;
+  position: relative;
+  /*父元素位置要设置为相对*/
+}
+
+.viewHead .tvTitle {
+  /* 文字加粗 */
+  font-weight: bold;
+  /* 字号 */
+  font-size: 28rpx;
+  /* 文字颜色 */
+  color: #333333;
+  /* 左边距 */
+  margin-left: 30rpx;
+}
+
+.viewHead .imgShare {
+  width: 202rpx;
+  height: 77rpx;
+  position: absolute;
+  right: 0;
+  /* 靠右调节 */
+  margin-right: 26rpx;
+}
+
+/* 简介 */
+.tvDesc {
+  /* 字号 */
+  font-size: 22rpx;
+  /* 文字颜色 */
+  color: #333333;
+  /* 上边距 */
+  margin-top: 20rpx;
+  /* 左边距 */
+  margin-left: 30rpx;
+}
+
+/* 标题 */
+.list_money {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 10rpx;
+  margin-bottom: 15rpx;
+  position: relative;
+  /*父元素位置要设置为相对*/
+}
+
+.list_money .tvMoney {
+  /* 文字加粗 */
+  font-weight: bold;
+  /* 字号 */
+  font-size: 50rpx;
+  /* 文字颜色 */
+  color: #FF3333;
+  /* 左边距 */
+  margin-left: 30rpx;
+}
+
+.list_money .tvSpec {
+  /* 字号 */
+  font-size: 26rpx;
+  /* 文字颜色 */
+  color: #333333;
+  position: absolute;
+  right: 0;
+  /* 靠右调节 */
+  margin-right: 26rpx;
+  margin-top: 15rpx;
+}
+
+.other1 {
+  height: 14rpx;
+  width: 100%;
+  background-color: #F6F6F6;
+}
+
+/* 地址 */
+.viewAddress {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 86rpx;
+  /* 文字垂直居中显示 */
+  display: flex;
+  align-items: center;
+  /*  居中显示*/
+  /* justify-content: center; */
+}
+
+.viewAddress .otherAddress {
+  height: 26rpx;
+  width: 26rpx;
+  margin-left: 30rpx;
+}
+
+.viewAddress .tvCityName {
+  color: #333333;
+  font-size: 26rpx;
+  text-align: center;
+  margin-left: 22rpx;
+}
+
+.other2 {
+  height: 14rpx;
+  width: 100%;
+  margin-top: 86rpx;
+  background-color: #F6F6F6;
+}
+
+/* 发布者 */
+.other3 {
+  color: #333333;
+  font-size: 33rpx;
+  margin-top: 22rpx;
+  /* 文字加粗 */
+  font-weight: bold;
+  margin-left: 22rpx;
+}
+
+/* 发布者 */
+.viewUser {
+  border: 1px solid #E1E1E1;
+  display: flex;
+  height: 110rpx;
+  margin: 30rpx;
+  margin-top: 26rpx;
+  position: relative;
+  /*父元素位置要设置为相对*/
+  border-radius: 8rpx;
+  /* 文字垂直居中显示 */
+  align-items: center;
+}
+
+.viewUser .imgAvatar {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 25px;
+  margin-left: 22rpx;
+}
+
+.viewUser .tvName {
+  /* 文字加粗 */
+  font-weight: bold;
+  /* 字号 */
+  font-size: 30rpx;
+  /* 文字颜色 */
+  color: #333333;
+  margin-left: 20rpx;
+}
+
+.viewUser .btnStar {
+  width: 131rpx;
+  height: 56rpx;
+  border: 2rpx solid rgba(0, 184, 158, 1);
+  border-radius: 28rpx;
+  position: absolute;
+  right: 0;
+  /* 靠右调节 */
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  /* 文字颜色 */
+  color: #333333;
+  /* 居中显示 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tvComment {
+  color: #333333;
+  font-size: 33rpx;
+  margin-top: 22rpx;
+  /* 文字加粗 */
+  font-weight: bold;
+  margin-left: 22rpx;
+  margin-bottom: 15rpx;
+}
+
+.viewComment {
+  margin-bottom: 85rpx;
+  display: inline-block;
+}
+
+/* 评论列表 */
+.commentList {
+  float: left;
+  width: 100%;
+  margin-top: 34rpx;
+  margin-bottom: 15rpx;
+  position: relative;
+  /*父元素位置要设置为
+  相对*/
+  display: flex;
+}
+
+.commentList .imgUser {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 25px;
+  margin-left: 22rpx;
+}
+
+.viewTv .tvUserName {
+  /* 字号 */
+  font-size: 26rpx;
+  /* 文字颜色 */
+  color: #333333;
+  margin-left: 20rpx;
+  /* 文字加粗 */
+  font-weight: bold;
+}
+
+.viewTv .tvTime {
+  /* 字号 */
+  font-size: 20rpx;
+  /* 文字颜色 */
+  color: #999999;
+  margin-top: 12rpx;
+  margin-left: 20rpx;
+}
+
+.viewTv .tvComment {
+  /* 字号 */
+  font-size: 24rpx;
+  /* 文字颜色 */
+  color: #333333;
+  margin-top: 25rpx;
+  margin-left: 20rpx;
+}
+
+/* 底部悬浮 */
+
+.viewFoot {
+  box-shadow: 0px 0px 20px 0px rgba(169, 169, 169, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 98rpx;
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+/* 聊天 */
+.btnChat {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  left: 30rpx;
+  margin-top: 15rpx;
+  color: #333;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* 购买 */
+.btnBuy {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  right: 30rpx;
+  margin-top: 15rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b89e;
+}
+
+.btnCancel {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  height: 78rpx;
+  margin: 30rpx;
+  color: #fff;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+  background-color: #00b89e;
+
+}
+
+
+/* 地点 */
+
+.locationView {
+  display: flex;
+  flex-direction: column;
+}
+
+.locationTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 49rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.locationContentLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  width: 650rpx;
+  color: #333;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+}
+
+.goThereButton {
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  right: 30rpx;
+  margin-top: 110rpx;
+}
+
+/* 约会时间 */
+
+.timeView {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.timeContentLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  width: 684rpx;
+  color: #333;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+}
+
+
+/* 保证金 */
+.moneyView {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 发布者 */
+
+.publisherView {
+  display: flex;
+  flex-direction: column;
+}
+
+.publisherTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.publisherBorderView {
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #e6e6e6;
+  border-radius: 8rpx;
+  width: 690rpx;
+  height: 110rpx;
+  margin-left: 30rpx;
+  margin-top: 26rpx;
+}
+
+.publisherHeadImageView {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  margin-left: 22rpx;
+  margin-top: 21rpx;
+}
+
+.publisherNameLabel {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: #333;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+}
+
+.attentionButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 131rpx;
+  height: 56rpx;
+  right: 50rpx;
+  margin-top: 27rpx;
+  color: #333;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmJoinButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 131rpx;
+  height: 56rpx;
+  right: 50rpx;
+  margin-top: 27rpx;
+  color: #333;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 应约者列表 */
+
+.myInfoJoinView {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.joinListGroup {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 30rpx;
+  flex-wrap: wrap;
+}
+
+.joinListView {
+
+  display: flex;
+  flex-direction: column;
+}
+
+.joinListTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+}
+
+.joinListItem {
+
+  display: flex;
+  flex-direction: column;
+  width: 92rpx;
+  align-items: center;
+}
+
+.itemImage {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+}
+
+.itemLabel {
+  font-size: 18rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  margin-top: 17rpx;
+  margin-bottom: 30rpx;
+}
+
+
+/* 底布局 */
+
+.bottomView {
+  box-shadow: 0px 0px 20px 0px rgba(169, 169, 169, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 98rpx;
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.needJoinView {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.joinNumLabel {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin-top: 34rpx;
+  display: flex;
+  margin-left: 30rpx;
+}
+
+.joinButton {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  right: 30rpx;
+  margin-top: 15rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b89e;
+}
+
+.chatButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  left: 30rpx;
+  margin-top: 15rpx;
+  color: #333;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.joinGroupButton {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  right: 30rpx;
+  margin-top: 15rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b89e;
+}
+
+.cancelButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  left: 30rpx;
+  margin-top: 15rpx;
+  color: #333;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.myChatButton {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  right: 30rpx;
+  margin-top: 15rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b89e;
+}
+.cancelIng{
+  background: #e6e6e6;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 38rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}

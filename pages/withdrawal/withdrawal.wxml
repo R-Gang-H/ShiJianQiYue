@@ -1,0 +1,9 @@
+<!--pages/withdrawal/withdrawal.wxml-->
+<view class="top"><text bindtap="record">提现记录</text><text class="line">|</text><text bindtap="detailed">余额明细</text></view>
+<view class="mybalance">
+  <view class="pic">
+    <image src="{{wallet}}"></image>  
+  </view>
+  <view class="txt">我的余额</view>
+  <view class="money">{{balance}}</view>
+</view>

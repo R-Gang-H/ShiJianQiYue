@@ -1,0 +1,8 @@
+/* pages/explain/explain.wxss */
+.explain{
+  padding:50rpx 30rpx;
+  text-indent: 2em;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  color:#333;
+}

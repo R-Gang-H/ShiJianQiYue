@@ -1,0 +1,45 @@
+/* pages/attestationExplain/attestationExplain.wxss */
+.aboutus .logo{
+  text-align: center;
+}
+.aboutus image{
+  width: 130rpx;
+  height: 180rpx;
+  margin: 0 auto;
+  margin-top: 25rpx;
+}
+.aboutus .cont{
+  padding:20rpx 50rpx 0;
+}
+.aboutus .cont .text{
+  font-size:24rpx;
+  line-height: 50rpx;
+  color:#333;
+  text-indent: 2em;
+  text-align: justify;
+}
+.aboutus .cont .quanxian{
+  font-size:24rpx;
+  line-height: 50rpx;
+  color:#333;
+  text-indent: 2em;
+  text-align: justify;
+  margin-top:30rpx;
+}
+.sub{
+  background:#fff;
+  width:100%;
+  margin-top:100rpx;
+  padding:0 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.sub button{
+  background: #00B69C;
+  height: 78rpx;
+  line-height: normal;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "关注",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loadingmore": "/components/loadingmore/loadingmore",
+    "emptypage": "/components/emptypage/emptypage"
+  },
+  "backgroundTextStyle": "dark"
+}

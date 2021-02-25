@@ -1,0 +1,19 @@
+/* pages/set/question/question.wxss */
+.question{
+  padding:40rpx 50rpx 0;
+}
+.question .question_list{
+  margin-bottom: 50rpx;
+}
+.question_list .list_title{
+  font-size:30rpx;
+  font-weight: bold;
+  color:#333;
+  margin-block-end: 20rpx;
+}
+.question_list .list_cont{
+  font-size:28rpx;
+  line-height: 48rpx;
+  text-align: justify;
+  color:#333;
+}

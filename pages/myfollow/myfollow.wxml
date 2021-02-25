@@ -1,0 +1,55 @@
+<!--pages/myfollow/myfollow.wxml-->
+<!-- 关注 -->
+<!-- tab栏切换 -->
+<view class="tabs">
+  <view class="item {{currentIndex==0?'itemed':''}}" data-index="0" bindtap="changeTab">
+    <text>我关注的人</text>
+    <view class="h_line"></view>
+  </view>
+  <view class="item {{currentIndex==1?'itemed':''}}" data-index="1" bindtap="changeTab">
+    <text>我的粉丝</text>
+    <view class="h_line"></view>
+  </view>
+</view>
+
+<!-- 内容 -->
+<view class="gsjsContain" wx:if="{{currentIndex == 0}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index"> 
+      <view class="item_group_list" bindtap="personInfor" data-userId="{{ item.userId }}">
+        <view class="icon_pic">
+          <image src="{{item.avatar}}"></image>
+        </view>
+        <view class="group_list">
+          <view class="name">{{item.name}}</view>
+          <view class="follow_btn vf-active" wx:if="{{item.isFollow==0}}" catchtap="cancelFollow" data-fUid="{{ item.userId }}">{{item.isFollow1}}</view>
+          <view class="follow_btn vf" wx:if="{{item.isFollow==1}}" catchtap="cancelFollow" data-fUid="{{ item.userId }}">{{item.isFollow1}}</view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>
+<view class="gsjsContain" wx:if="{{currentIndex == 1}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index">
+      <view class="item_group_list" bindtap="personInfor" data-userId="{{ item.userId }}">
+        <view class="icon_pic">
+          <image src="{{item.avatar}}"></image>
+        </view>
+        <view class="group_list">
+          <view class="name">{{item.name}}</view>
+          <view class="follow_btn vf" wx:if="{{item.isFollow==0}}" catchtap="followPeoson" data-fUid="{{ item.userId }}">{{item.isFollow1}}</view>
+          <view class="follow_btn vf" wx:if="{{item.isFollow==1}}" catchtap="cancelFollow" data-fUid="{{ item.userId }}">{{item.isFollow1}}</view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>

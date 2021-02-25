@@ -1,0 +1,17 @@
+<!--pages/attestationExplain/attestationExplain.wxml-->
+<view class="aboutus">
+    <view class="logo"><image class="" src="{{about}}"></image></view>
+    <view class="cont">
+        <view class="quanxian">高级权限包括：</view>
+        <view class="text">
+           第一书记：每个村会有一位专属的第一书记，通过真实身份认证审核通过后才能享有第一书记特权
+        </view>
+        <view class="text">认证商户：有实体店铺的店主，通过营业执照等信息认证审核通过后次啊能享有认证商户权限</view>
+        <view class="quanxian">第一书记权限：发布信息、红包、绿色广播，专属权限为：发布商品</view>
+        <view class="quanxian">认证商户权限：发布信息、红包、绿色广播，专属权限为：发布商品</view>
+        <view class="quanxian">特别说明：完成身份认证需要下载时间契约APP，在APP中进行身份认证。</view>
+    </view>
+    <view class="sub">
+      <button style="width:100%" bindtap="onDownloadTap" class="submit_btn">时间契约APP下载</button>
+    </view>
+</view>

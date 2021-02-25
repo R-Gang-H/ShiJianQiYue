@@ -1,0 +1,166 @@
+<!--pages/marketDeatil/marketD.wxml-->
+<wxs module="utils" src="../../utils/util.wxs" />
+<scroll-view  class="viewContent">
+<!-- 顶部图片 -->
+<swiper class="banner" indicator-dots indicator-color="#87E1D5" indicator-active-color="#00BAA1" circular>
+	<block wx:for="{{ goods.productImages }}" wx:key="*this">
+		<swiper-item>
+			<navigator url="">
+				<image class="bannerItem" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item }}" mode="aspectFill"> </image>
+			</navigator>
+		</swiper-item>
+	</block>
+</swiper>
+<!-- 头布局 -->
+<view class="viewTop">
+	<!-- 标题 -->
+	<view class="viewHead">
+		<view class="tvTitle">{{goods.productName}}</view>
+		<!-- 转发悬赏 -->
+		<!-- <navigator class="" target="" url="/pages/sharePrompt/sharePrompt?goods={{utils.jsonToString(goods)}}" hover-class="none" open-type="navigate">
+			<image class="imgShare" src="/images/ic_share_money.png" hidden="{{goods.shareReward==0}}"> </image>
+		</navigator> -->
+	</view>
+	<!--简介 -->
+	<view class="tvDesc">{{goods.productDesc}}</view>
+	<!-- 价钱 -->
+	<view class="list_money">
+		<view class="tvMoney">{{goods.price}}</view>
+		<view class="tvSpec">{{goods.productSpec}}</view>
+	</view>
+</view>
+<view class="other1"></view>
+<!-- 地址 -->
+<view class="locationView">
+	<label class="locationTitleLabel">
+		约会地点
+	</label>
+	<label class="locationContentLabel">
+		{{ goods.productAddress}}
+	</label>
+	<image class="goThereButton" src="../../images/location_icon.png" catchtap="goLocation">
+	</image>
+</view>
+<!-- 约会时间 -->
+<view class="timeView">
+	<label class="timeTitleLabel">
+		约会时间
+	</label>
+	<label class="timeContentLabel">
+		{{ goods.customDate }}
+	</label>
+</view>
+
+<!-- 应约保证金 -->
+<view class="moneyView">
+	<label class="timeTitleLabel">
+		应约保证金
+	</label>
+	<label class="timeContentLabel">
+		{{ goods.productOtherBzj }}元
+	</label>
+</view>
+
+<!-- 我发布的信息情况下的应约者列表 -->
+<view class="myInfoJoinView" wx:if="{{ isMe }}">
+	<label class="timeTitleLabel">
+		应约者（{{joinList.length}}）人
+	</label>
+	<view class="publisherBorderView" wx:for="{{ joinList }}" wx:key="*this">
+		<image class="publisherHeadImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.userAvatar }}" catchtap="goPersonDetail" data-userid="{{ item.userId }}">
+		</image>
+		<label class="publisherNameLabel">
+			{{ item.userName }}
+		</label>
+		<view class="confirmJoinButton" catchtap="confirmJoinButton" data-model="{{item}}">
+			{{ item.status == 1? "已应约" : "确认应约" }}
+
+		</view>
+	</view>
+</view>
+
+<!-- 发布者 -->
+
+<view class="publisherView" wx:if="{{ !isMe }}">
+
+	<label class="publisherTitleLabel">发布者</label>
+	<view class="publisherBorderView">
+		<image class="publisherHeadImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ goods.userAvatar }}" catchtap="goPersonDetail" data-userid="{{goods.userId}}">
+		</image>
+		<label class="publisherNameLabel">
+			{{ goods.userName }}
+		</label>
+		<view class="attentionButton" catchtap="attentionButtonDidClicked">
+			{{ model.isFollow == 1? "取消关注" : "关注" }}
+		</view>
+	</view>
+</view>
+<!-- 应约者  已应约的人可以看 -->
+<view class="joinListView" hidden="{{ !showJoinList }}">
+	<label class="joinListTitleLabel">
+		应约者
+	</label>
+	<view class="joinListGroup">
+		<view class="joinListItem" wx:for="{{joinList}}" wx:key="*this">
+			<image class="itemImage" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{item.userAvatar}}"></image>
+			<label class="itemLabel">
+				{{item.userName}}
+			</label>
+		</view>
+	</view>
+</view>
+
+</scroll-view>
+
+<!-- 评论 -->
+<!-- <view class="tvComment">评论 ( {{ goods.commentNum}} ) </view>
+<view class="viewComment">
+	<view class="commentList" wx:for='{{ commentList }}' wx:key='*this'>
+		<image class="imgUser" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.userAvatar }}">
+		</image>
+		<view class="viewTv">
+			<view class="tvUserName">{{item.userName}}</view>
+			<view class="tvTime">{{item.createTime}}</view>
+			<view class="tvComment">{{item.commentContent}}</view>
+		</view>
+	</view>
+</view> -->
+
+
+
+<!-- 底部view -->
+<view class="bottomView">
+
+	<!-- 显示应约按钮和应约者,此时为为应约状态 -->
+	<view class="needJoinView" wx:if="{{ needJoin }}">
+			<view class="cancelButton" catchtap="goC2C">
+			聊天
+		</view>
+		<view class="joinButton" data-price="{{goods.productOtherBzj}}" catchtap="joinInfo">
+			应约
+		</view>
+	</view>
+
+	<!-- 显示已应约的样式 -->
+	<view class="joinedView" wx:if="{{ showJoinList }}">
+		<view class="joinGroupButton" catchtap="goGroup">
+			进入群聊
+		</view>
+		<view class="chatButton" catchtap="goC2C">
+			和发起人聊天
+		</view>
+	</view>
+
+	<!-- 显示我发起的样式 -->
+	<view class="MyInfoView" wx:if="{{ isIng }}">
+		<view class="cancelButton" catchtap="cancelInfomation">
+			撤销
+		</view>
+		<view class="myChatButton" catchtap="goGroup">
+			进入群聊
+		</view>
+	</view>
+
+	<view class="cancelIng" wx:if="{{ isCancel }}">撤销中</view>
+	<view class="cancelIng" wx:if="{{ isEnd }}">已结束</view>
+</view>

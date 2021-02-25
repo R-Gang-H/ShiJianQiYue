@@ -1,0 +1,20 @@
+<view  class="body-image" style="background:{{background}};">
+ <block wx:for="{{image}}" wx:key="index">
+ <view  class="body-image-content" style="height:{{hint_height}};width:{{hint_width}};">
+     <view class="body-image-contenticon" >
+      <!-- <image class="" src="../../images/close.png"></image> -->
+      <icon id="{{index}}" type='clear' bindtap="removeImage"></icon>
+     </view> 
+      
+    <image src="{{item.imageAddress}}" style="height:{{hint_height}};width:{{hint_width}};" mode="{{mode}}">
+    </image>   
+ </view>
+</block>
+  <view class="body-image-content"  bindtap="chooseImage" style="background:{{hint_background}};height:{{hint_height}};width:{{hint_width}};">
+    <view  class="body-image-contentfont">
+      <image class="add" src="{{iconimage}}"></image>
+    </view>
+    <view class="body-image-hint">{{hint}}</view>
+  </view>
+</view>
+

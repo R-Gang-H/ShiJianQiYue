@@ -1,0 +1,4 @@
+<!--pages/selectCity/selectCity.wxml-->
+<view class='wrapper' >
+    <list-html data="{{city}}" binddetail="bindtap" bindregetlocation="regetlocation" bindcustombindtap="custombindtap" my-city="{{false}}" config="{{config}}"></list-html>
+</view>

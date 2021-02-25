@@ -1,0 +1,172 @@
+/* pages/myorder/myorder.wxss */
+page{
+  background: #F5F5F5;
+}
+.tabs {
+    display: flex;
+    height: 85rpx;
+    line-height: 85rpx;
+    border-bottom: #EBECF1 1rpx solid;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    z-index: 1;
+}
+
+.tabs .item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.tabs .item text {
+    font-size: 28rpx;
+    color: #999999;
+    display: inline-block;
+    height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.tabs .itemed text {
+    color: #333333;
+    font-weight: bold;
+}
+
+.tabs .itemed .h_line {
+    width: 66rpx;
+    height: 4rpx;
+    background: #00B89E;
+    position: absolute;
+    bottom: -1rpx;
+    left: 50%;
+    margin-left: -33rpx;
+}
+
+.gsjsContain{
+  margin-top:100rpx;
+}
+.item_group {
+    padding: 0 30rpx;
+    background: #fff;
+    margin-bottom:15rpx;
+}
+.item_group_list .order_code{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:20rpx 0;
+  border-bottom:1px solid #EEEEEE;
+}
+.code_num{
+  margin-left:10rpx;
+}
+.order_code .code{
+  font-size:24rpx;
+  color:#999999;
+}
+.order_code .state{
+  font-size:24rpx;
+  color:#999999;
+}
+.item_group_list .item_cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    padding:20rpx 0;
+}
+
+.item_group_list .icon_pic {
+    width: 130rpx;
+    height:130rpx;
+}
+
+.icon_pic image {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.group_list {
+    margin-left:25rpx;
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 5rpx 0 10rpx;
+    min-height: 120rpx;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.group_list .list_name {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+.list_name .name{
+  font-size:28rpx;
+  color:#333333;
+}
+.list_name .price{
+  font-size:28rpx;
+  color:#333333;
+}
+.group_list .list_cont{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  margin-top: 20rpx;
+}
+.list_cont .describe{
+  font-size:22rpx;
+  color:#999999;
+  line-height: 34rpx;
+}
+.list_cont .number{
+  font-size:24rpx;
+  color:#999999;
+}
+.number .fh{
+  font-size: 22rpx;
+  color:#999999;
+} 
+.order_bot{
+  width:100%;
+  border-top:1px solid #EEEEEE;
+  padding:25rpx 0;
+}
+.order_bot .total{
+  font-size:24rpx;
+  color:#999999;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20rpx;
+}
+.total text{
+  margin-left: 20rpx;
+}
+.total text.jiage{
+  font-size:28rpx;
+  color:#333333;
+}
+.order_bot .operate{
+  display: flex;
+  justify-content: flex-end;
+}
+.operate .btn{
+  border-radius: 30rpx;
+  width:150rpx;
+  height:56rpx;
+  line-height: 55rpx;
+  font-size:24rpx;
+  color:#333;
+  text-align: center;
+  border:1px solid #999;
+  margin-left:25rpx;
+}
+.operate .go{
+  color:#00B79D;
+  border:1px solid #00B79D;
+}

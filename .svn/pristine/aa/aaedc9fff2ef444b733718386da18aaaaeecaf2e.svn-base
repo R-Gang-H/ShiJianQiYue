@@ -1,0 +1,10 @@
+<!--pages/set/aboutUs/aboutUs.wxml-->
+<view class="aboutus">
+    <view class="logo"><image class="" src="{{about}}"></image></view>
+    <view class="cont">
+        <view class="text">
+            时间契约用户可以发起约会的邀请， 可以邀请陌生人， 也可以邀请熟人。邀请陌生人的叫公约， 邀请熟人的叫私约。公约可以在APP里被所有的人看到， 看到的人可以根据自己的情况来报名参加。私约是被邀请的朋友才能看到，可以参加。
+        </view>
+        <view class="text">无论是公约还是私约， 邀请人和参与者， 都要预先支付一下定金。如果按照指定时间指定地点到达， 那么定金退换。如果没有能按照时间地点的要求到达， 那么你的定金将不在属于你。如果其他参与者到达， 你的定金将平均分给大家。如果其他参与者也都没有达到， 所有人的定金将捐给慈善。</view>
+    </view>
+</view>

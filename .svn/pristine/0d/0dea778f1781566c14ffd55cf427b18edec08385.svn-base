@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我转发的",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loadingmore": "/components/loadingmore/loadingmore",
+    "emptypage": "/components/emptypage/emptypage"
+  },
+  "backgroundTextStyle": "dark"
+}

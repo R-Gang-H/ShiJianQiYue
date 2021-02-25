@@ -1,0 +1,80 @@
+<!--pages/broadcast/broadcast.wxml-->
+
+<view class="maskView" catchtouchmove="touchmove" catchtap="touchmove" wx:if="{{ showFill }}">
+
+<image class="backgroundimg" src="../../images/right_pop.png">
+
+<view class="listCell" wx:for="{{ categories }}" wx:key="*this" catchtap="didSelectedType" data-typeid="{{item.commonId}}">
+<label class="totle"> {{ item.commonTotle }}</label>
+</view>
+
+
+</image>
+
+</view>
+
+<view class="topButtonView">
+ 
+<view class="playButton" bindtap="allPlayButtonDidClicked">
+<image class="playIcon" src="../../images/play.png" wx:if="{{ !allPlay }}"></image>
+<image class="playIcon" src="../../images/pause.png" wx:if="{{ allPlay }}"></image>
+
+全部播放
+</view>
+<label class="numberLabel">
+（ {{ totalNumber }} ）
+</label>
+
+<view class="topLine"></view>
+
+
+<view class="fillButton" catchtap="fillButtonDidClicked">
+筛选
+<image class="fillIcon" src="../../images/fill.png" ></image>
+</view>
+
+</view>
+
+
+
+<!-- 信息列表 -->
+
+<view class="scrollView">
+<!-- 每个格子 -->
+<block wx:for = "{{ messages }}" wx:key = "*this">
+<view class="cell" catchtap="didSelectedCell" data-title="{{ item.bdcTitle }}" data-bdcId="{{ item.bdcId }}" >
+
+
+<!-- 标题 -->
+<label class="titleLabel">
+<image class="shImageView" src="/images/ic_shop_certifi.png" wx:if = "{{item.isSh == 1 }}">  </image>
+<image class="sjImageView" src="/images/ic_sj_certifi.png" wx:if = "{{item.isSj == 1}}" ></image>
+{{item.bdcTitle}}
+</label>
+<image class="itemPlayIcon" src="/images/play_icon.png" catchtap="playWithSender" data-model="{{item}}" wx:if = "{{ !item.isPlay }}">
+</image>
+
+<image class="itemPauseIcon" src="/images/pause_icon.png" catchtap="pauseWithSender" data-model="{{item}}" wx:if = "{{ item.isPlay }}">
+</image>
+
+
+<!-- 发布时间 距离结束时间 -->
+
+<label class="createTimeLabel">
+{{item.createTime}}
+<label class="expireTimeLabel">
+{{item.customTime}}
+</label>
+</label>
+
+<label class="distanceLabel">
+{{item.juli}}
+</label>
+
+
+<view class="lineView" ></view>
+
+</view>
+
+</block>
+</view>

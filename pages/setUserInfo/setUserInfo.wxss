@@ -1,0 +1,123 @@
+/* pages/setUserInfo/setUserInfo.wxss */
+
+.titleLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 50rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  margin-top: 54rpx;
+  margin-left: 53rpx;
+  color: #333;
+}
+
+.messageLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 27rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin-top: 27rpx;
+  margin-left: 53rpx;
+  color: #999;
+}
+
+.userNameView {
+  display: flex;
+  flex-direction: column;
+  margin-top: 129rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  margin-left: 53rpx;
+}
+
+.textField {
+  position: absolute;
+  right: 100rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  flex-direction: row-reverse;
+  text-align: right;
+  margin-top: -5rpx;
+}
+
+.nicknameArrow {
+  width: 15rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 54rpx;
+}
+
+.nicknameLine {
+  background-color: #eee;
+  height: 1rpx;
+  margin-right: 53rpx;
+  margin-top: 35rpx;
+}
+
+.selectView {
+  display: flex;
+  flex-direction: column;
+  height: 100rpx;
+}
+
+.selectViewTitle {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  position: absolute;
+  margin-top: 35rpx;
+  margin-bottom: 35rpx;
+  margin-left: 53rpx;
+}
+
+.rightArrow {
+  width: 15rpx;
+  height: 28rpx;
+  right: 54rpx;
+  position: absolute;
+  margin-top: 37rpx;
+}
+
+.lineView {
+  position: absolute;
+  margin-top: 100rpx;
+  margin-left: 53rpx;
+  width: 646rpx;
+  height: 2rpx;
+  background-color: #eee;
+}
+
+.placeholderLabel {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  margin-top: 35rpx;
+  right: 100rpx;
+  position: absolute;
+  color: #D0D0D0;
+  width: 375rpx;
+}
+.datePicker {
+  text-align: right;
+  width: 750rpx;
+  height: 100rpx;
+}
+.buttonView {
+  width: 640rpx;
+  border-radius: 8rpx;
+  background-color: #00B89E;
+  bottom: 90rpx;
+  left: 55rpx;
+  position: absolute;
+  height: 88rpx;
+  text-align: center;
+  font: 32rpx;
+  font-family: PingFangSC;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  color: #fff;
+}

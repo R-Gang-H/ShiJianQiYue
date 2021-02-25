@@ -1,0 +1,239 @@
+<!--pages/myInitiation/myInitiation.wxml-->
+<!-- 我发起的 -->
+<headerNavbar navbar-data='{{nvabarData}}' bind:action='changeheadTab'></headerNavbar>
+<view class='home-page'>
+	<view style="position:fixed; top:{{height}};left:0;" class="tabs">
+		<view class="item {{currentIndex==0?'itemed':''}}" data-index="0" bindtap="changeTab">
+			<text>进行中</text>
+			<view class="h_line"></view>
+		</view>
+		<view class="item {{currentIndex==1?'itemed':''}}" data-index="1" bindtap="changeTab">
+			<text>撤销中</text>
+			<view class="h_line"></view>
+		</view>
+		<view class="item {{currentIndex==2?'itemed':''}}" data-index="2" bindtap="changeTab">
+			<text>已结束</text>
+			<view class="h_line"></view>
+		</view>
+	</view>
+	<view class="cont">
+		<view class="gsjsContain" wx:if="{{currentIndex == 0}}">
+			<view class="item_in">
+				<view class="item_group" wx:for="{{records}}" wx:key="index">
+					<view class="item_group_list" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-infoId="{{ item.infoId }}" data-type="{{ item.type }}">
+						<view class="icon_pic" wx:if="{{item.infoImages}}">
+							<image src="{{item.infoImages}}"></image>
+						</view>
+						<view class="group_list">
+							<view class="list_name">
+								<!-- 判断是商家还是第一书记 -->
+								<block wx:if="{{item.isSh==1}}">
+									<image class="type_shop" src="{{shop}}"></image>
+								</block>
+								<block wx:if="{{item.isSj==1}}">
+									<image class="type_shuji" src="{{shuji}}"></image>
+								</block>
+								<view class="red_envelopes" wx:if="{{item.type=='gift'}}">
+									<image class="" src="{{gift}}"></image>
+									<text class="money">{{item.infoType}}</text>
+								</view>
+								<view class="name">{{item.infoTitle}}</view>
+							</view>
+							<view class="list_time">
+								<view class="time">{{item.createTime2}}</view>
+								<view class="state">{{item.msg}}</view>
+							</view>
+							<view class="list_distance">{{item.joinNum}}</view>
+							<!-- <audio src="{{item.infoDesc}}" action="{{action}}" ></audio>
+              <image wx:if="{{item.type=='broadcast'}}" bindtap="audioPlay" class='audio broadcast_play' src="{{isData?'../../images/iv_plau.png':'../../images/ic_paush.png'}}
+              "></image> -->
+
+							<audio src="{{item.infoDesc}}" id="myAudio{{index}}"></audio>
+							<image wx:if="{{item.type=='broadcast'}}" catchtap="audioPlay" class='audio broadcast_play' src="{{item.isData ? audioImg:audioImg1}}" data-curIndex="{{index}}" data-id="{{index}}"></image>
+						</view>
+					</view>
+				</view>
+				<block wx:if="{{records.length>0}}">
+					<loadingmore hasmore="{{hasmore}}"></loadingmore>
+				</block>
+			</view>
+			<emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+		</view>
+		<view class="gsjsContain" wx:if="{{currentIndex == 1}}">
+			<view class="item_in">
+				<view class="item_group" wx:for="{{records}}" wx:key="index">
+					<view class="item_group_list" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-infoId="{{ item.infoId }}" data-type="{{ item.type }}">
+						<view class="icon_pic" wx:if="{{item.infoImages}}">
+							<image src="{{item.infoImages}}"></image>
+						</view>
+						<view class="group_list">
+							<view class="list_name">
+								<!-- 判断是商家还是第一书记 -->
+								<block wx:if="{{item.isSh==1}}">
+									<image class="type_shop" src="{{shop}}"></image>
+								</block>
+								<block wx:if="{{item.isSj==1}}">
+									<image class="type_shuji" src="{{shuji}}"></image>
+								</block>
+								<view class="red_envelopes" wx:if="{{item.type=='gift'}}">
+									<image class="" src="{{gift}}"></image>
+									<text class="money">{{item.infoType}}</text>
+								</view>
+								<view class="name">{{item.infoTitle}}</view>
+							</view>
+							<view class="list_time">
+								<view class="time">{{item.createTime2}}</view>
+								<view class="state">{{item.msg}}</view>
+							</view>
+							<view class="list_distance">{{item.joinNum}}</view>
+							<!-- <audio src="{{item.infoDesc}}" action="{{action}}" ></audio>
+              <image wx:if="{{item.type=='broadcast'}}" bindtap="audioPlay" class='audio broadcast_play' src="{{isData?'../../images/iv_plau.png':'../../images/ic_paush.png'}}
+              "></image> -->
+
+							<audio src="{{item.infoDesc}}" id="myAudio{{index}}"></audio>
+							<image wx:if="{{item.type=='broadcast'}}" catchtap="audioPlay" class='audio broadcast_play' src="{{item.isData ? audioImg:audioImg1}}" data-curIndex="{{index}}" data-id="{{index}}"></image>
+						</view>
+					</view>
+				</view>
+				<block wx:if="{{records.length>0}}">
+					<loadingmore hasmore="{{hasmore}}"></loadingmore>
+				</block>
+			</view>
+			<emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+		</view>
+		<view class="gsjsContain" wx:if="{{currentIndex == 2}}">
+			<view class="item_in">
+				<view class="item_group" wx:for="{{records}}" wx:key="index">
+					<view class="item_group_list" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-infoId="{{ item.infoId }}" data-type="{{item.type }}">
+						<view class="icon_pic" wx:if="{{item.infoImages}}">
+							<image src="{{item.infoImages}}"></image>
+						</view>
+						<view class="group_list">
+							<view class="list_name">
+								<!-- 判断是商家还是第一书记 -->
+								<block wx:if="{{item.isSh==1}}">
+									<image class="type_shop" src="{{shop}}"></image>
+								</block>
+								<block wx:if="{{item.isSj==1}}">
+									<image class="type_shuji" src="{{shuji}}"></image>
+								</block>
+								<view class="red_envelopes" wx:if="{{item.type=='gift'}}">
+									<image class="" src="{{gift}}"></image>
+									<text class="money">{{item.infoType}}</text>
+								</view>
+								<view class="name">{{item.infoTitle}}</view>
+							</view>
+							<view class="list_time">
+								<view class="time">{{item.createTime2}}</view>
+								<view class="state">{{item.msg}}</view>
+							</view>
+							<view class="list_distance">{{item.joinNum}}</view>
+							<!-- <audio src="{{item.infoDesc}}" action="{{action}}" ></audio>
+              <image wx:if="{{item.type=='broadcast'}}" bindtap="audioPlay" class='audio broadcast_play' src="{{isData?'../../images/iv_plau.png':'../../images/ic_paush.png'}}
+              "></image> -->
+
+							<audio src="{{item.infoDesc}}" id="myAudio{{index}}"></audio>
+							<image wx:if="{{item.type=='broadcast'}}" catchtap="audioPlay" class='audio broadcast_play' src="{{item.isData ? audioImg:audioImg1}}" data-curIndex="{{index}}" data-id="{{index}}"></image>
+						</view>
+					</view>
+				</view>
+				<block wx:if="{{records.length>0}}">
+					<loadingmore hasmore="{{hasmore}}"></loadingmore>
+				</block>
+			</view>
+			<emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+		</view>
+	</view>
+</view>
+<!-- <view class='home-page' wx:if="{{curIndex == 1}}">
+  <view style="position:fixed; top:{{height}};left:0;" class="tabs">
+      <view class="item {{currentIndex1==0?'itemed':''}}" data-index="0" bindtap="changeTab1">
+        <text>进行中</text>
+        <view class="h_line"></view>
+      </view>
+      <view class="item {{currentIndex1==1?'itemed':''}}" data-index="1" bindtap="changeTab1">
+        <text>已下架</text>
+        <view class="h_line"></view>
+      </view>
+  </view> 
+  <view class="cont goods">
+    <view class="gsjsContain" wx:if="{{currentIndex1 == 0}}">
+      <view class="item_in">
+        <view class="item_group" wx:for="{{records}}" wx:key="index">
+          <view class="group_cont">
+            <view class="item_group_list" data-title="{{ item.productName }}" data-productId="{{ item.productId }}" bindtap="goodDetail" wx:if="{{isBorder}}">
+              <view class="icon_pic" wx:if="{{item.productImages}}">
+                <image src="{{item.productImages}}"></image>
+              </view>
+              <view class="group_list">
+                <view class="list_name">
+                  <view class="name">{{item.productName}}</view>
+                  <view class="price">{{item.price}}</view>
+                </view>
+                <view class="describe">{{item.productDesc}}</view>
+                <view class="tips">
+                  <text class="sell">{{item.orderNum}}</text>
+                  <text class="comment">{{item.commentNum}}</text>
+                  <text class="profit">{{item.income}}</text>
+                </view>
+              </view>
+            </view>        
+            <view class="group_bot">
+              <view></view>
+              <view class="operate">
+               <view wx:if="{{item.status == 0}}" class="btn edit">编辑</view>
+                <view wx:if="{{item.status == 1}}" class="btn lowerShelf" bindtap="xiajiaGoods" data-productId="{{item.productId}}">下架</view>
+                 <view wx:if="{{item.status == 1}}" class="btn anew">重新发布</view> 
+                <view wx:if="{{item.status == 0}}" class="btn delete" data-productId="{{item.productId}}" bindtap="deleteGoods">删除</view>
+              </view>
+            </view>
+            <view class="line" wx:if="{{isLine}}"></view>
+          </view>
+        </view>
+        <block wx:if="{{records.length>0}}">
+          <loadingmore  hasmore="{{hasmore}}"></loadingmore>
+        </block>
+      </view>
+      <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+    </view>
+    <view class="gsjsContain" wx:if="{{currentIndex1 == 1}}">
+      <view class="item_in">
+        <view class="item_group" wx:for="{{records}}" wx:key="index">
+          <view class="group_cont">
+            <view class="item_group_list" data-title="{{ item.productName }}" data-productId="{{ item.productId }}" bindtap="goodDetail">
+              <view class="icon_pic" wx:if="{{item.productImages}}">
+                <image src="{{item.productImages}}"></image>
+              </view>
+              <view class="group_list">
+                <view class="list_name">
+                  <view class="name">{{item.productName}}</view>
+                  <view class="price">{{item.price}}</view>
+                </view>
+                <view class="describe">{{item.productDesc}}</view>
+                <view class="tips">
+                  <text class="sell">{{item.orderNum}}</text>
+                  <text class="comment">{{item.commentNum}}</text>
+                  <text class="profit">{{item.income}}</text>
+                </view>
+              </view>
+            </view>        
+            <view class="group_bot">
+                <view class="time">{{item.createTime3}}</view>
+               <view class="operate">
+                 <view wx:if="{{item.status == 0}}" class="btn edit">编辑</view>
+                <view wx:if="{{item.status == 1}}" class="btn lowerShelf" bindtap="xiajiaGoods" data-productId="{{item.productId}}">下架</view>
+                <view wx:if="{{item.status == 1}}" class="btn anew">重新发布</view> 
+                <view wx:if="{{item.status == 0}}" class="btn delete" data-productId="{{item.productId}}" bindtap="deleteGoods">删除</view>
+              </view>
+            </view>
+            <view class="line" wx:if="{{isLine}}"></view>
+          </view>
+        </view>
+        <block wx:if="{{records.length>0}}">
+          <loadingmore  hasmore="{{hasmore}}"></loadingmore>
+        </block>
+      </view>
+      <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+    </view>
+  </view>
+</view> -->

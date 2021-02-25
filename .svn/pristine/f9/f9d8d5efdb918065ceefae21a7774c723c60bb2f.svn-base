@@ -1,0 +1,529 @@
+/* pages/broadcastDetail/broadcastDetail.wxss */
+
+/* pages/infoDetail/infoDetail.wxss */
+
+
+.contentView {
+  padding-bottom: 98rpx;
+}
+
+.topLine {
+  width: 100%;
+  height: 16rpx;
+  background-color: #F8F8F8;
+}
+
+
+/* 到期时间 */
+
+.timeLabel {
+  right: 31rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  margin-top: 65rpx;
+  color: #00b89e;
+  position: absolute;
+}
+
+/* 地点 */
+
+.locationView {
+  display: flex;
+  flex-direction: column;
+}
+
+.locationTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 49rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.locationContentLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  width: 650rpx;
+  color: #333;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+}
+
+.goThereButton {
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  right: 30rpx;
+  margin-top: 110rpx;
+}
+
+/* 约会时间 */
+
+.timeView {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.timeContentLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  width: 684rpx;
+  color: #333;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+}
+
+
+/* 保证金 */
+.moneyView {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 发布者 */
+
+.publisherView {
+  display: flex;
+  flex-direction: column;
+}
+
+.publisherTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.publisherBorderView {
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #e6e6e6;
+  border-radius: 8rpx;
+  width: 690rpx;
+  height: 110rpx;
+  margin-left: 30rpx;
+  margin-top: 26rpx;
+}
+
+.publisherHeadImageView {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  margin-left: 22rpx;
+  margin-top: 21rpx;
+}
+
+.publisherNameLabel {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: #333;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+}
+
+.attentionButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 131rpx;
+  height: 56rpx;
+  right: 50rpx;
+  margin-top: 27rpx;
+  color: #333;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmJoinButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 131rpx;
+  height: 56rpx;
+  right: 50rpx;
+  margin-top: 27rpx;
+  color: #333;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 应约者列表 */
+
+.myInfoJoinView {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.joinListGroup {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 30rpx;
+  flex-wrap: wrap;
+}
+
+.joinListView {
+
+  display: flex;
+  flex-direction: column;
+}
+
+.joinListTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+}
+
+.joinListItem {
+
+  display: flex;
+  flex-direction: column;
+  width: 92rpx;
+  align-items: center;
+}
+
+.itemImage {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+}
+
+.itemLabel {
+  font-size: 18rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  margin-top: 17rpx;
+  margin-bottom: 30rpx;
+}
+
+/* 底布局 */
+
+.bottomView {
+  box-shadow: 0px 0px 20px 0px rgba(169, 169, 169, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 98rpx;
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.needJoinView {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.joinNumLabel {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin-top: 34rpx;
+  display: flex;
+  margin-left: 30rpx;
+}
+
+.joinButton {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  right: 30rpx;
+  margin-top: 15rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b89e;
+}
+
+.chatButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  left: 30rpx;
+  margin-top: 15rpx;
+  color: #333;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.joinGroupButton {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  right: 30rpx;
+  margin-top: 15rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b89e;
+}
+
+.cancelButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  left: 30rpx;
+  margin-top: 15rpx;
+  color: #333;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.myChatButton {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 320rpx;
+  height: 68rpx;
+  right: 30rpx;
+  margin-top: 15rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b89e;
+}
+
+/* pages/broadcast/broadcast.wxss */
+
+.topButtonView {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: 104rpx;
+  width: 750rpx;
+  background-color: #fff;
+}
+
+.playButton {
+  width: 168rpx;
+  height: 56rpx;
+  border-radius: 8rpx;
+  background-color: #f5f5f5;
+  margin-top: 17rpx;
+  margin-left: 31rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.playIcon {
+  width: 17rpx;
+  height: 19rpx;
+  margin-left: 30rpx;
+}
+
+.numberLabel {
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  margin-left: 20rpx;
+  margin-top: 24rpx;
+}
+
+
+.fillButton {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: #333;
+  right: 39rpx;
+  /* position: absolute; */
+  display: flex;
+  position: absolute;
+  margin-top: 25rpx;
+}
+
+.fillIcon {
+  width: 26rpx;
+  height: 23rpx;
+  margin-left: 16rpx;
+  margin-top: 7rpx;
+}
+
+.scrollView {
+  top: 104rpx;
+  width: 750rpx;
+  margin-left: 0rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollView .cell {}
+
+
+
+.cell .titleLabel {
+  position: relative;
+  display: flex;
+
+  margin-top: 30rpx;
+  font-family: PingFang SC;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 46rpx;
+  font-weight: 500;
+  margin-left: 23rpx;
+}
+
+.cell .sjImageView {
+  width: 119rpx;
+  height: 29rpx;
+  margin-top: 6rpx;
+}
+
+.cell .shImageView {
+  width: 85rpx;
+  height: 29rpx;
+  margin-top: 6rpx;
+}
+
+.cell .createTimeLabel {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+  margin-left: 23rpx;
+  /* position: absolute; */
+  display: flex;
+
+  margin-top: 59rpx;
+}
+
+.cell .expireTimeLabel {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+  margin-left: 18rpx;
+}
+
+.cell .distanceLabel {
+  /* position: absolute; */
+  margin-top: -33rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+}
+
+.lineView {
+  width: 100%;
+  height: 16rpx;
+  margin-top: 60rpx;
+  display: flex;
+  background-color: #f6f6f6;
+}
+
+.itemPlayIcon {
+  width: 44rpx;
+  height: 44rpx;
+  right: 30rpx;
+  margin-top: -30rpx;
+  position: absolute;
+  display: flex;
+
+}
+
+.itemPauseIcon {
+  width: 44rpx;
+  height: 44rpx;
+  right: 30rpx;
+  margin-top: -30rpx;
+  position: absolute;
+  display: flex;
+}
+
+.cancelIng {
+  background: #e6e6e6;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 38rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}

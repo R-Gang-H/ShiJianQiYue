@@ -1,0 +1,93 @@
+<!-- 声明需要使用的模板文件 -->
+<wxs module="utils" src="../../utils/util.wxs" />
+
+<view class="tabSearch">
+  <!-- tab栏切换 -->
+  <view class="tabs">
+    <view class="tab {{currentIndex==0?'itemed':''}}" data-index="0" bindtap="changeTab">
+      <text class="text1">聊天</text>
+      <view class="h_triangle" />
+    </view>
+    <view class="tab {{currentIndex==1?'itemed':''}}" data-index="1" bindtap="changeTab">
+      <text class="text2">我关注的事儿</text>
+      <view class="h_triangle" />
+    </view>
+  </view>
+
+  <!-- 搜索框 -->
+  <view class="search">
+    <input placeholder="🔍 搜索" confirm-type="search"  bindconfirm="btnSearch"></input>
+  </view>
+</view>
+
+<!-- tab 信息内容 -->
+<view class='tabContent'>
+  <view hidden="{{currentIndex!=0?'active':''}}" data-index="0" bindtap="changeTab">
+    
+    <view wx:for="{{array}}" class="item" wx:key="index" wx:for-item="items" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindlongpress="handleLongPress"  hidden="{{items.type=='@TIM#SYSTEM'}}" bindtap="goChat" id="{{index}}">
+        <view wx:if="{{items.type=='C2C'}}">
+          <image wx:if="{{items.userProfile.avatar!=''}}" mode='aspectFill' lazy-load src="{{items.userProfile.avatar}}" />
+          <image wx:else src="{{head}}" />
+        </view>
+        <view wx:else>
+          <image wx:if="{{items.groupProfile.avatar!=''}}" mode='aspectFill' lazy-load src="{{items.groupProfile.avatar}}" />
+          <image wx:else src="{{group}}" />
+        </view>
+
+        <view class="desc">
+          <view class="titleView">
+            <view  class="title">{{items.type=='C2C'? items.userProfile.nick : items.groupProfile.name}} </view>
+            <view class="msgtime">{{utils.getDateWithTime(items.lastMessage.lastTime)}}</view>
+          </view>
+          <view class="countView">
+            <view class="count">{{items.lastMessage.messageForShow}}</view>
+            <view class="msgcount" hidden="{{items.unreadCount==0}}"> {{items.unreadCount}}</view>
+          </view>
+        </view>
+    </view>
+    <block wx:if="{{array.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+    <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+
+  </view>
+
+  <view hidden="{{currentIndex!=1?'active':''}}" data-index="1" bindtap="changeTab">
+    <block wx:for="{{recordsData}}" wx:key="index">
+      <view class="item_group_list" catchtap="didSelectedCell" data-title="{{item.infoTitle}}" data-infoId="{{item.infoId}}" data-type="{{item.type}}">
+        <view class="icon_pic" wx:if="{{item.infoImages}}">
+          <image src="{{item.infoImages}}"></image>
+        </view>
+        <view class="group_list">
+          <view class="list_name">
+            <!-- 判断是商家还是第一书记 -->
+            <block wx:if="{{item.isSh==1}}">
+              <image class="type_shop" src="{{shop}}"></image>
+            </block>
+            <block wx:if="{{item.isSj==1}}">
+              <image class="type_shuji" src="{{shuji}}"></image>
+            </block>
+            <view class="red_envelopes" wx:if="{{item.type=='gift'}}">
+              <image class="" src="{{gift}}"></image>
+              <text class="money">{{item.infoType}}</text>
+            </view>
+            <view class="name">{{item.infoTitle}}</view>
+          </view>
+          <view class="list_time">
+            <view class="time">{{item.createTime2}}</view>
+            <view class="state">{{item.msg}}</view>
+          </view>
+          <view class="list_distance">{{item.juli==null?'':item.juli}}</view>
+
+          <audio src="{{item.infoDesc}}" id="myAudio{{index}}"></audio>
+          <image wx:if="{{item.type=='broadcast'}}" catchtap="audioPlay" class='audio broadcast_play' src="{{item.isData ? audioImg:audioImg1}}" data-curIndex="{{index}}" data-id="{{index}}"></image>
+        </view>
+      </view>
+    
+    </block>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+    <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+  </view>
+</view>

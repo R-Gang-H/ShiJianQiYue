@@ -1,0 +1,54 @@
+/* pages/set/receivingAddr/receivingAddr.wxss */
+.address{
+  padding:0 30rpx 120rpx;
+}
+.address_list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx 0;
+  border-bottom:1px solid #EEEEEE;
+}
+.text_infor .name{
+  font-size:30rpx;
+  color:#222222;
+  font-weight: bold;
+  margin-right: 28rpx;
+}
+.text_infor .phone{
+  font-size:28rpx;
+  color:#999999;
+}
+.text_addr{
+  font-size:24rpx;
+  color:#222222;
+  line-height: 34rpx;
+  margin-top:15rpx;
+}
+.edit_icon{
+  width:34rpx;
+  height:34rpx;
+  margin-left:50rpx;
+}
+.edit_icon image{
+  width:34rpx;
+  height:34rpx;
+}
+.add_address{
+  position: fixed;
+  left:0;
+  bottom:0;
+  background:#fff;
+  width:100%;
+  padding:30rpx 0;
+  text-align: center;
+}
+.add_address .btn{
+  background: #00B69C;
+  height: 78rpx;
+  line-height: normal;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+}

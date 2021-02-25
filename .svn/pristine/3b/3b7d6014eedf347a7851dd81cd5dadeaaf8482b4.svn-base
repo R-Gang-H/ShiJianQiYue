@@ -1,0 +1,46 @@
+/* pages/set/complaint/complaint.wxss */
+page{
+  background: #fff;
+}
+
+.formItem{
+  padding: 28rpx 30rpx;
+  margin: 30rpx;
+  border: 2rpx solid #eee;
+  border-radius: 2rpx;
+
+}
+.formItem .section{
+  height: 300rpx;
+  font-size: 26rpx;
+  color: #333;
+  width: 100%;
+  line-height: 36rpx;
+}
+.addPhoto{
+  padding:30rpx 30rpx 0;
+}
+.addPhoto .title{
+  font-size:32rpx;
+  color:#333333;
+  margin-bottom: 30rpx;
+}
+.sub{
+  position: fixed;
+  left:0;
+  bottom:0;
+  background:#fff;
+  width:100%;
+  padding:30rpx 0;
+  text-align: center;
+}
+.sub button{
+  margin: 0 30rpx;
+  background: #00B69C;
+  height: 78rpx;
+  line-height: normal;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+}

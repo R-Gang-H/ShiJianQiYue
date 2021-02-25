@@ -1,0 +1,113 @@
+<!--pages/market/market.wxml-->
+<!--集市首页-->
+<view class="viewTop" style="position:fixed;top:0;">
+
+  <view class='editSearch'>
+    <input class='number' placeholder="🔍 输入商品名称" placeholder-style='color:#bbb' maxlength='11' confirm-type="search" bindconfirm="btnSearch" />
+  </view>
+
+  <!-- tab栏切换 -->
+  <view class="tabs">
+    <view class="item {{currentIndex==0?'itemed':''}}" data-index="0" bindtap="click">
+      <text>区域</text>
+      <view class="h_line"></view>
+    </view>
+    <view class="item {{currentIndex==1?'itemed':''}}" data-index="1" bindtap="click">
+      <text>排序</text>
+      <view class="h_line"></view>
+    </view>
+    <view class="item {{currentIndex==2?'itemed':''}}" data-index="2" bindtap="click">
+      <text>筛选</text>
+      <view class="h_line"></view>
+    </view>
+  </view>
+</view>
+<!-- 城市选择弹窗 -->
+<view class="viewSort" hidden="{{ currentIndex!=0 }}" catchtouchmove="hideMask">
+  <view class="allCity">
+    <view class="otherCity">
+      <!-- 市 -->
+      <view class="cityList">
+        <block wx:for='{{listCity}}' wx:key='*this'>
+          <view class="{{item.isSelect?'tvCityBlock':'tvCity'}}" data-index="{{item}}" bindtap="cityClick">{{item.cityName}}</view>
+        </block>
+      </view>
+      <!-- 区 -->
+      <view class="cityList2">
+        <block wx:for='{{listZone}}' wx:key='*this'>
+          <view class="{{item.isSelect?'tvCityBlock':'tvCity'}}" data-index="{{item}}" bindtap="cityClick">{{item.cityName}}</view>
+        </block>
+      </view>
+      <view class="cityList2">
+        <block wx:for='{{listStreet}}' wx:key='*this'>
+          <view class="{{item.isSelect?'tvCityBlock':'tvCity'}}" data-index="{{item}}" bindtap="cityClick">{{item.cityName}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="btnCityId" bindtap="GetCityId">确定</view>
+  </view>
+</view>
+<!-- 排序弹窗 -->
+<view class="viewSort" hidden="{{ currentIndex!=1 }}" catchtouchmove="hideMask" bindtap="hideMask">
+  <view class="viewList">
+    <view class="{{item.isSelect?'tvSortTv':'tvSort'}}" wx:for="{{sortList}}" wx:key="*this" bindtap="sortClick" data-index="{{item.btnId}}">{{item.name}}</view>
+  </view>
+</view>
+<!-- 筛选弹窗 -->
+<view class="viewSort" hidden="{{ currentIndex!=2 }}" catchtouchmove="hideMask" bindtap="hideMask">
+  <view class="otherView">
+    <view class="viewFList">
+      <block wx:for='{{filterRecorder}}' wx:key='*this'>
+        <view class="{{item.isSelect?'viewF-th':'viewFList-th'}}" data-index="{{item.id}}" bindtap="filterClick">{{item.productCateName}}</view>
+        <!-- <view class='viewFList-td' wx:else>{{item.pcateName}}</view> -->
+      </block>
+    </view>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view class="table">
+  <block wx:for='{{ itemContent }}' wx:key='*this'>
+    <!-- 奇数的时候一行 -->
+    <view class='table-th' wx:if='{{index<2}}'>
+      <!-- 跳转到详情页面 -->
+      <navigator class="" bindtap="goDetail" data-index="{{item}}" hover-class="none" open-type="navigate">
+        <!-- 图片 -->
+        <view class="icon_pic">
+          <image src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{item.iconPic}}"></image>
+        </view>
+        <!-- 标题 -->
+        <view class="list_name">{{item.listName}}</view>
+        <!--简介 -->
+        <view class="list_desc">
+          <view class="desc">{{item.listContent}}</view>
+        </view>
+        <!-- 价钱 -->
+        <view class="list_money">
+          <view class="name">{{item.listTime}}</view>
+          <view class="address">{{item.state}}</view>
+        </view>
+      </navigator>
+    </view>
+    <!-- 偶数的时候换行 -->
+    <view class='table-td' wx:else>
+      <!-- 跳转到详情页面 -->
+      <navigator class="" bindtap="goDetail" data-index="{{item}}" hover-class="none" open-type="navigate">
+        <!-- 图片 -->
+        <view class="icon_pic">
+          <image src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{item.iconPic}}" mode="aspectFill" ></image>
+        </view>
+        <!-- 标题 -->
+        <view class="list_name">{{item.listName}}</view>
+        <!--简介 -->
+        <view class="list_desc">
+          <view class="desc">{{item.listContent}}</view>
+        </view>
+        <!-- 价钱 -->
+        <view class="list_money">
+          <view class="name">{{item.listTime}}</view>
+          <view class="address">{{item.state}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</view>

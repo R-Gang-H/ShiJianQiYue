@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "个人简介",
+    "usingComponents": {
+        "imgupload": "../components/imgupload/imgupload"
+    }
+}

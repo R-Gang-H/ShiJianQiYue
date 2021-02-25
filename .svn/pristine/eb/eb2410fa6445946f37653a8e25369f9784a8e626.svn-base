@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我应约的",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loadingmore": "/components/loadingmore/loadingmore",
+    "emptypage": "/components/emptypage/emptypage"
+  },
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,36 @@
+/* pages/pull/pull.wxss */
+.tabs {
+    display: flex;
+    height: 85rpx;
+    line-height: 85rpx;
+    border-bottom: #EBECF1 1rpx solid;
+}
+
+.tabs .item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.tabs .item text {
+    font-size: 30rpx;
+    color: #999999;
+    display: inline-block;
+    height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.tabs .itemed text {
+    color: #333333;
+    font-weight: bold;
+}
+
+.tabs .itemed .h_line {
+    width: 66rpx;
+    height: 4rpx;
+    background: #00B89E;
+    position: absolute;
+    bottom: -1rpx;
+    left: 50%;
+    margin-left: -33rpx;
+}

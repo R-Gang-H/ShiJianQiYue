@@ -1,0 +1,30 @@
+<!--pages/login/login.wxml-->
+<!-- 登录页面 -->
+<view class="login">
+    <view class="login_group">
+        <view class="login_group_title">登录时间契约</view>
+        <view class="login_group_text">未注册手机验证后即完成注册</view>
+    </view>
+    <view class="login_form">
+        <form bindsubmit="formSubmit">
+            <view class="login_form_list">
+                <view class='phone-box'>
+                    <input name="phone" type='number' placeholder="输入手机号"  placeholder-style='color:#bbb'  maxlength='11' name="phone" class='number' bindinput='lovePhone' />
+                </view>
+            </view>
+            <view class="login_form_list">
+                <view class='phone-box yzm'>
+                <input name="phoneCode" placeholder="输入验证码" class='number' placeholder-style='color:#bbb' bindinput="yanLoveInput" />
+                </view>
+                <view bindtap='yanLoveBtn' class="{{isGetCode?'getNum':'getNum2'}}" >{{getText2}}</view>
+            </view>
+            <view class="login_btn"><button formType="submit" class='submit'>登录</button></view>
+            <checkbox-group bindchange="checkboxChange" class="check_group">
+              <label class="checkbox">
+                <checkbox/>
+              </label>
+              <text class="agreement">登录注册代表同意《时间契约用户协议》</text>
+          </checkbox-group>
+        </form>
+    </view>
+</view>

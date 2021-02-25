@@ -1,0 +1,27 @@
+<!--pages/groupInfo/groupInfo.wxml-->
+
+<!-- 群成员列表 -->
+<view class="member">
+  <block wx:for="{{groupMember}}" wx:key="index">
+    <view class="groupMember" bindtap="getUserInof" data-userId="{{item.userID}}">
+      <image wx:if="{{item.avatar!=''}}" mode='aspectFill' lazy-load src="{{item.avatar}}" />
+      <image wx:else src="{{head}}" />
+    </view>
+  </block>
+</view>
+<view style="height:12rpx;background-color:#F6F6F6;" />
+<!-- 群名称 -->
+<view class="groupName">
+  <text class="nice">群名称</text>
+  <text class="name">{{group.name}}</text>
+</view>
+<view style="height:12rpx;background-color:#F6F6F6;" />
+<!-- 群公告 -->
+<view class="groupNotice">
+  <text class="noti">群公告</text>
+  <view class="notiContent">{{group.notification==''?nNotification:group.notification}}</view>
+</view>
+<!-- 退出 -->
+<view class="quitGroup" bindtap="quitGroup">
+  <text>退出圈子</text>
+</view>

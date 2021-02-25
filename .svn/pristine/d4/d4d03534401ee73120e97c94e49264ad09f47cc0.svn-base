@@ -1,0 +1,15 @@
+<!--pages/transactionDetails/transactionDetails.wxml-->
+<view class="details">
+	<view class="details_list" wx:for="{{records}}" wx:key="index">
+		<view class="list_top">
+			<view class="name">{{item.remark}}</view>
+			<view class="money">{{item.amount}}</view>
+			<image class="isClear" hidden="{{item.isClear==0}}" src="/images/ic_select.png"></image>
+		</view>
+		<view class="time">{{item.createTime}}</view>
+	</view>
+	<block wx:if="{{records.length>0}}">
+		<loadingmore hasmore="{{hasmore}}"></loadingmore>
+	</block>
+</view>
+<emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>

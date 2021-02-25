@@ -1,0 +1,104 @@
+<!--index.wxml-->
+
+<view class="searchView">
+
+  <view class="buttonView" bindtap="goSelectCity">
+    <label class="buttonLabel">{{city}} <image class="downIcon" src="../../images/down_icon.png"></image> </label>
+  </view>
+  <view class="lineView"> </view>
+  <label class="searchBar" catchtap="searchBarDidSearch">🔍 请输入信息的关键词</label>
+
+</view>
+
+
+
+
+
+
+<view class="bannerView">
+
+  <swiper class="banner" indicator-dots="ture" indicator-color="#87E1D5" indicator-active-color="#00BAA1"
+    autoplay="ture" duration="500" interval="2000" circular="true">
+    <block wx:for="{{ banners }}" wx:key="*this">
+      <swiper-item>
+        <image class="bannerItem" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.headimage }}"
+          mode="aspectFill" catchtap="intoImgDetails" data-title="{{ item.title }}" data-url="{{item.url}}"
+          data-content="{{item.content}}"> </image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>
+<view class="functionButtonView">
+  <block wx:for="{{ buttons }}" wx:key="*this">
+    <view class="buttonItem" catchtap="fiveButtonDidClicked" data-title="{{ item.commonTotle }}"
+      data-infotype="{{ item.commonId }}">
+      <image src="{{ item.commonImg1 }}" class="buttonImageView"> </image>
+      <text class="buttonName">
+        {{ item.commonTotle }} </text>
+    </view>
+
+  </block>
+</view>
+
+
+<!-- 三个按钮 -->
+<view class="threeButtonView">
+  <block wx:for="{{ threeButtons }}" wx:key="*this">
+
+    <view class="threeButtonItem" catchtap="threeButtonOnClicked" data-buttonName="{{item.buttonName}}">
+
+      <!-- 按钮文字 -->
+      <label class="threeButtonTitle">
+        {{ item.buttonName }}
+      </label>
+
+      <!-- 按钮图片 -->
+      <image class="threeButtonImageView" src="{{ item.buttonImage }}">
+      </image>
+
+    </view>
+
+  </block>
+</view>
+
+<!-- 最新发布 -->
+<label class="new">
+  最新发布
+</label>
+
+<!-- 信息列表 -->
+
+<view class="scrollView">
+  <!-- 每个格子 -->
+  <block wx:for="{{ messages }}" wx:key="*this">
+    <view class="cell" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-infoId="{{ item.infoId }}">
+
+      <!-- 图片 -->
+      <image class="cellImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.infoImages}}"
+        mode="aspectFill"></image>
+
+      <!-- 标题 -->
+      <label class="titleLabel">
+        <image class="shImageView" src="/images/ic_shop_certifi.png" wx:if="{{item.isSh == 1 }}"> </image>
+        <image class="sjImageView" src="/images/ic_sj_certifi.png" wx:if="{{item.isSj == 1}}"></image>
+        {{item.infoTitle}}
+      </label>
+
+      <!-- 发布时间 距离结束时间 -->
+
+      <label class="createTimeLabel">
+        {{item.createTime}}
+        <label class="expireTimeLabel">
+          {{item.customTime}}
+        </label>
+      </label>
+
+      <label class="distanceLabel">
+        {{item.juli}}
+      </label>
+
+    </view>
+
+  </block>
+</view>

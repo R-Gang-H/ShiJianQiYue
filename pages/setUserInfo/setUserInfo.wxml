@@ -1,0 +1,44 @@
+<!--pages/setUserInfo/setUserInfo.wxml-->
+
+<label class="titleLabel">
+个人信息
+</label>
+
+<label class="messageLabel">
+设置性别和出生年月信息，有利于我们更好的为您筛选适合您的信息，且不可更改。
+</label>
+
+<view class="userNameView">
+<label class="nicknameLabel">
+昵称
+</label>
+
+<input class="textField" placeholder="请输入昵称"placeholder-style="color:#D0D0D0;" maxlength='11' bindinput="textFieldDidChange">
+</input>
+
+<image class="nicknameArrow" src="../../images/right_arrow.png"></image>
+
+<view class="nicknameLine">
+</view>
+</view>
+
+<view class="selectView" wx:for = "{{ titles }}" wx:key = "*this">
+
+<label class="selectViewTitle">
+{{ item.title }}
+</label>
+<image class="rightArrow" src="../../images/right_arrow.png"></image>
+
+<view class="lineView"></view>
+  <picker class="datePicker"  mode="{{item.title=='出生年月'? 'date':'selector'}}" range="{{sex}}" value="{{date}}"  bindchange="bindDateChange" data-title="{{item.title}}">
+    <label  class = "placeholderLabel" style="color:{{item.text?'#333333;':'#d0d0d0;'}}" >
+ {{item.text?item.text:item.placeholder}}
+</label>
+
+  </picker>
+</view>
+
+
+<view class="buttonView" catchtap="doneButtonDidClicked">
+确定
+</view>

@@ -1,0 +1,113 @@
+<!--pages/userInfo/userInfo.wxml-->
+<image class="imgUser" src="{{userInfo.avatar}}"></image>
+<!-- 标题 -->
+<view class="infor_top">
+  <view class="viewHead">
+    <view class="viewName">
+      <view class="tvTitle">{{userInfo.name}}</view>
+      <image class="imgRole" src="{{shop}}"> </image>
+    </view>
+    <view class="btn">
+      <view class="follow_btn vf" wx:if="{{userInfo.isFollow==1}}" catchtap="cancelFollow" data-fUid="{{ userInfo.userId }}">{{userInfo.isFollow1}}</view>
+      <view class="follow_btn vf" wx:if="{{userInfo.isFollow==0}}" catchtap="followPeoson" data-fUid="{{ userInfo.userId }}">{{userInfo.isFollow1}}</view>
+      <view wx:if="{{isShow}}" class="follow_btn vf-active" catchtap="shield" data-pbUserId="{{ userInfo.userId }}">{{shield}}</view>
+      <view wx:if="{{isShow1}}" class="follow_btn vf-active" catchtap="cancelshield" data-pbUserId="{{ userInfo.userId }}">{{cancelshield}}</view>
+    </view>
+  </view>
+  <view class="tvAge">{{userInfo.sex}} </view>
+  <view class="tvDesc">简介：{{userInfo.intro}}</view>
+  <view class="tvNum">发布：{{userInfo.pubNum}} 应约：{{userInfo.joinNum}}</view>
+</view>
+<view class="other1">我的照片</view>
+<view class="photos">
+	<scroll-view scroll-x="true" class="imgScroll">
+		<view class="myphoto">
+			<view class="pic" wx:for="{{userInfo.photos}}" wx:key="index">
+				<image class="imgMy" bindtap="imgYu" data-list="{{userInfo.photos}}" data-src="{{dImg}}" src="{{item}}"></image>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+<!-- 发布的信息和发布的商品 -->
+<view class="tabs">
+  <view class="item {{currentIndex==0?'itemed':''}}" data-index="0" bindtap="changeTab">
+    <text>发布的信息</text>
+    <view class="h_line"></view>
+  </view>
+  <view class="item {{currentIndex==1?'itemed':''}}" data-index="1" bindtap="changeTab">
+    <text>发布的商品</text>
+    <view class="h_line"></view>
+  </view>
+</view>
+
+  <view class="gsjsContain" wx:if="{{currentIndex == 0}}">
+    <view class="item_in">
+      <view class="item_group" wx:for="{{records}}" wx:key="index">
+        <view class="item_group_list" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-infoId="{{ item.infoId }}" data-infoDesc="{{ item.infoDesc }}">
+          <view class="icon_pic" wx:if="{{item.infoImages}}">
+            <image src="{{item.infoImages}}"></image>
+          </view>
+          <view class="group_list">
+            <view class="list_name">
+              <!-- 判断是商家还是第一书记 -->
+              <block wx:if="{{item.isSh==1}}">
+                <image class="type_shop" src="{{shop}}"></image>
+              </block>
+              <block wx:if="{{item.isSj==1}}">
+                <image class="type_shuji" src="{{shuji}}"></image>
+              </block>
+              <view class="red_envelopes" wx:if="{{item.type=='gift'}}">
+                <image class="" src="{{gift}}"></image>
+                <text class="money">{{item.infoType}}</text>
+              </view>
+              <view class="name">{{item.infoTitle}}</view>
+            </view>
+            <view class="list_time">
+              <view class="time">{{item.createTime2}}</view>
+              <view class="state">{{item.msg}}</view>
+            </view>
+            <view class="list_distance">{{item.joinNum}}</view>
+            <!-- <audio src="{{item.infoDesc}}" action="{{action}}" ></audio>
+            <image wx:if="{{item.type=='broadcast'}}" bindtap="audioPlay" class='audio broadcast_play' src="{{isData?'../../images/iv_plau.png':'../../images/ic_paush.png'}}
+            "></image> -->
+
+            <audio src="{{item.infoDesc}}" id ="myAudio{{index}}"  ></audio>
+            <image wx:if="{{item.type=='broadcast'}}" catchtap="audioPlay" class='audio broadcast_play' src="{{item.isData ? audioImg:audioImg1}}" data-curIndex="{{index}}" data-id="{{index}}"></image>
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{records.length>0}}">
+        <loadingmore  hasmore="{{hasmore}}"></loadingmore>
+      </block>
+    </view>
+    <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+  </view>
+  <view class="gsjsContain goods" wx:if="{{currentIndex == 1}}">
+    <view class="item_in">
+      <view class="item_group" wx:for="{{records}}" wx:key="index">
+        <view class="group_cont">
+          <view class="item_group_list" data-title="{{ item.productName }}" data-productId="{{ item.productId }}" bindtap="goodDetail">
+            <view class="icon_pic" wx:if="{{item.productImages}}">
+              <image src="{{item.productImages}}"></image>
+            </view>
+            <view class="group_list">
+              <view class="list_name">
+                <view class="name">{{item.productName}}</view>
+                <view class="price">{{item.price}}</view>
+              </view>
+              <view class="describe">{{item.productDesc}}</view>
+              <view class="tips">
+                <text class="sell">售出{{item.orderNum}}</text>
+                <text class="comment">评价{{item.commentNum}}</text>
+                <text class="profit">收益{{item.income}}</text>
+              </view>
+            </view>
+          </view>        
+        </view>
+      </view>
+      <block wx:if="{{records.length>0}}">
+        <loadingmore  hasmore="{{hasmore}}"></loadingmore>
+      </block>
+    </view>
+    <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+  </view>

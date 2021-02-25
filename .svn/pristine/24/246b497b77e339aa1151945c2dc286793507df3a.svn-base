@@ -1,0 +1,22 @@
+<!--pages/set/receivingAddr/receivingAddr.wxml-->
+<view class="address">
+	<view class="address_list" wx:for="{{records}}" wx:key="index" bindtap="changeAddress" data-index="{{item}}">
+		<view class="list_text">
+			<view class="text_infor">
+				<text class="name">{{item.name}}</text>
+				<text class="phone">{{item.mobile}}</text>
+			</view>
+			<view class="text_addr">{{item.address}}</view>
+		</view>
+		<view class="edit_icon" catchtap="editAddress" data-addressId="{{ item.addressId }}" data-name="{{ item.name }}" data-sex="{{ item.sex}}" data-mobile="{{item.mobile}}" data-address="{{item.address}}" data-address2="{{item.address2}}">
+			<image class="" src="{{editIcon}}"> </image>
+		</view>
+	</view>
+	<block wx:if="{{records.length>0}}">
+		<loadingmore hasmore="{{hasmore}}"></loadingmore>
+	</block>
+</view>
+<emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+<view class="add_address">
+	<button class="btn" style="width:90%" bindtap="addAddress">添加新地址</button>
+</view>

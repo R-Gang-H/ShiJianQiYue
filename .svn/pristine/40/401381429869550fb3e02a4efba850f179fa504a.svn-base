@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "交易明细",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loadingmore": "/components/loadingmore/loadingmore",
+    "emptypage": "/components/emptypage/emptypage"
+  },
+  "backgroundTextStyle": "dark"
+}

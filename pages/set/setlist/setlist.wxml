@@ -1,0 +1,85 @@
+<!--pages/set/personalInformation/personalInformation.wxml-->
+<view class="set_cont">
+    <view class="setlist">
+      <view class="list_item">
+        <navigator class="lis" target="" url="/pages/set/personalInfor/personalInfor" hover-class="none" open-type="navigate">
+          <view class="item_label">个人信息</view>
+          <view class="item_right">
+            <view class="right_text">修改/添加</view>
+            <view class="right_arrow">
+                <image src="{{arrow}}"></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="list_item">
+        <navigator class="lis" target="" url="/pages/set/receivingAddr/receivingAddr" hover-class="none" open-type="navigate">
+          <view class="item_label">收货地址</view>
+          <view class="item_right">
+              <view class="right_text">修改/添加</view>
+              <view class="right_arrow">
+                  <image src="{{arrow}}"></image>
+              </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="setlist">
+      <view class="list_item">
+        <navigator class="lis" target="" url="/pages/set/question/question" hover-class="none" open-type="navigate">
+            <view class="item_label">常见问题</view>
+            <view class="item_right">
+                <view class="right_arrow">
+                  <image src="{{arrow}}"></image>
+                </view>
+            </view>
+        </navigator>
+      </view>
+      <view class="list_item">
+        <navigator class="lis" target="" url="/pages/set/complaint/complaint" hover-class="none" open-type="navigate">
+          <view class="item_label">举报投诉</view>
+          <view class="item_right">
+              <view class="right_arrow">
+                <image src="{{arrow}}"></image>
+              </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="setlist">
+      <view class="list_item kh_servie">
+        <view class="lis" bindtap="to_call">
+          <view class="item_label">客户服务</view>
+          <view class="item_right">
+              <view class="right_arrow">
+                <image src="{{mobile}}"></image>
+              </view>
+          </view>
+        </view>
+      </view>
+      <view class="list_item">
+        <navigator class="lis" target="" url="/pages/set/aboutUs/aboutUs" hover-class="none" open-type="navigate">
+          <view class="item_label">关于我们</view>
+          <view class="item_right">
+              <view class="right_arrow">
+                <image src="{{arrow}}"></image>
+              </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="list_item">
+        <navigator class="lis" target="" url="/pages/set/useragreement/useragreement" hover-class="none" open-type="navigate">
+          <view class="item_label">用户协议</view>
+          <view class="item_right">
+            <view class="right_arrow">
+            <image src="{{arrow}}"></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+</view>
+<view class="login_out">
+  <view class="btn" bindtap="loginOut">退出登录</view>
+</view>
+

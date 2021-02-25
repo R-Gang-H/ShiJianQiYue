@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的商户订单",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loadingmore": "/components/loadingmore/loadingmore",
+    "emptypage": "/components/emptypage/emptypage"
+  },
+  "backgroundTextStyle": "dark"
+}

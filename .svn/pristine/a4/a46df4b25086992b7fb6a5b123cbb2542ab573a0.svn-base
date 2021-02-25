@@ -1,0 +1,14 @@
+<!--pages/set/profile/profile.wxml-->
+<form bindsubmit="formSubmit" class="profile">
+  <view class="form_in">
+    <view class="formItem">
+      <textarea class="section" name="intro" bindblur="bindTextAreaBlur" value="{{intro}}" />
+    </view>
+    <view class="addPhoto">
+      <view class="title">个人主页图片</view>
+      <view class="tips">（ 添加三张以上更容易引起他人的兴趣哦～ ）</view>
+      <imgupload bind:action='uploadImg' wx:if='{{image}}' image="{{image}}"></imgupload>
+    </view>
+  </view>
+  <view class="sub"><button style="width:90%" form-type="submit" class="submit_btn">提交</button></view>
+</form>

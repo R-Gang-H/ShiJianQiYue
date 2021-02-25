@@ -1,0 +1,41 @@
+<!--pages/redPacket/redPacket.wxml-->
+<!-- 信息列表 -->
+
+<view class="searchBarView">
+<input class="searchBar" focus="{{becomeFirst}}" bindinput="textFieldDidChange"  bindconfirm="searchBarDidSearch" placeholder="请输入关键词"></input>
+</view>
+
+<view class="scrollView">
+<!-- 每个格子 -->
+<block wx:for = "{{ redPackets }}" wx:key = "*this">
+<view class="cell" catchtap="didSelectedCell" data-title="{{ item.giftTitle }}" data-giftId="{{ item.giftId }}" >
+
+<!-- 图片 -->
+<image class="cellImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.giftImages}}"></image>
+
+<!-- 标题 -->
+<label class="titleLabel">
+<image class="shImageView" src="/images/ic_shop_certifi.png" wx:if = "{{item.isSh == 1 }}">  </image>
+<image class="sjImageView" src="/images/ic_sj_certifi.png" wx:if = "{{item.isSj == 1}}" ></image>
+<image class="red" src="/images/ic_27.png">
+<label class="moneyLabel">
+{{ item.giftSingleMoney }}元 
+</label> </image>
+{{item.giftTitle}}
+</label>
+
+<!-- 发布时间 距离结束时间 -->
+
+<label class="createTimeLabel">
+{{item.createTime}}
+
+</label>
+
+<label class="distanceLabel">
+{{item.juli}}
+</label>
+
+</view>
+
+</block>
+</view>

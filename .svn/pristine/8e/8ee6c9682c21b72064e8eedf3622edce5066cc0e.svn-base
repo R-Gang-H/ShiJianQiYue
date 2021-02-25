@@ -1,0 +1,79 @@
+/* pages/cashWithdrawal/cashWithdrawal.wxss */
+.tixian{
+  padding:20rpx 30rpx;
+  box-sizing: border-box;
+  width:100%;
+}
+.biaoti{
+  font-size:32rpx;
+  color:#333;
+}
+.method{
+  display: flex;
+  margin: 29rpx 0 65rpx;
+}
+.method_list{
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  width:330rpx;
+  padding:0 30rpx;
+  box-sizing: border-box;
+  height:88rpx;
+}
+.method_list.normal{
+  border:1rpx solid #E1E1E1;
+  background:#fff;
+}
+.method_list.is_checked{
+  border:1rpx solid #00B89E;
+  background:#E5F8F5;
+}
+.method_list:first-child{
+  margin-right: 30rpx;
+}
+.method_list image{
+  width:50rpx;
+  height:50rpx;
+}
+.method_list .txt{
+  font-size:28rpx;
+  color:#333333;
+  margin-left: 20rpx;
+}
+.basic_infor input{
+  padding:25rpx 0;
+  border-bottom: 1rpx solid #EEEEEE;
+  /* margin-top:6rpx; */
+  font-size:30rpx;
+}
+.infor_lis{
+  margin-bottom:60rpx;
+}
+.infor_lis:last-child{
+  margin-bottom: 30rpx;
+}
+.withdrawal_bot{
+  display: flex;
+  justify-content: space-between;
+}
+.withdrawal_bot view{
+  font-size: 26rpx;
+  color:#999999;
+}
+.btn button{
+  background: #00B69C;
+  height: 78rpx;
+  line-height: normal;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+  margin-top:70rpx;
+}
+.note{
+  font-size:22rpx;
+  color:#999999;
+  line-height: 38rpx;
+  margin-top:25rpx;
+}

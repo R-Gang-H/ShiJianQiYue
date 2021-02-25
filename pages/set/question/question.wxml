@@ -1,0 +1,23 @@
+<!--pages/set/question/question.wxml-->
+<view class="question">
+    <view class="question_list">
+        <view class="list_title">Q1：怎么注册？</view>
+        <view class="list_cont">A：您好，首先需要注册账号 ，填写个人信息，点击邀约，支付邀约保证金。</view>
+    </view>
+    <view class="question_list">
+        <view class="list_title">Q2：怎么登陆？</view>
+        <view class="list_cont">A：您好，首先需要注册账号 ，填写个人信息，点击邀约，支付邀约保证金。</view>
+    </view>
+    <view class="question_list">
+        <view class="list_title">Q3：怎么设置个人信息？</view>
+        <view class="list_cont">A：您好，首先需要注册账号 ，填写个人信息，点击邀约，支付邀约保证金。</view>
+    </view>
+    <view class="question_list">
+        <view class="list_title">Q4：什么人可以在集市中发布商品？</view>
+        <view class="list_cont">A：您好，需要您注册成为商户或者第一书记才可以发布商品。</view>
+    </view>
+    <view class="question_list">
+        <view class="list_title">Q5：为什么需要我支付应约保证金？</view>
+        <view class="list_cont">A：您好，如果您参与的活动设置了需要应约者支付应约保证您，那么您就需要支付应约保证金，否则就不能参与该活动。准时应约后，应约保证金是可以退还的。</view>
+    </view>
+</view>

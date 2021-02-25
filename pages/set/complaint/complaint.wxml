@@ -1,0 +1,11 @@
+<!--pages/set/complaint/complaint.wxml-->
+<form bindsubmit="formSubmit" class="profile">
+  <view class="formItem">
+    <textarea class="section" name="feedContent" bindblur="bindTextAreaBlur" placeholder="{{feedContent}}" />
+  </view>
+  <view class="addPhoto">
+    <view class="title">上传图片</view>
+    <imgupload bind:action='uploadImg' wx:if='{{image}}' image="{{image}}"></imgupload>
+  </view>
+  <view class="sub"><button style="width:90%" form-type="submit" class="submit_btn">提交</button></view>
+</form>

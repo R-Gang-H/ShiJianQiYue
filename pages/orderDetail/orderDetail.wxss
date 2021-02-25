@@ -1,0 +1,145 @@
+/* pages/orderDetail/orderDetail.wxss */
+.detail_top{
+  padding:20rpx 30rpx;
+}
+.detail_top .list_status{
+  font-size:32rpx;
+  font-weight: bold;
+  color:#00B79D;
+  margin-bottom: 25rpx;
+}
+.detail_top .orderCode{
+  margin-bottom:3rpx;
+}
+.detail_top .orderCode text{
+  font-size:22rpx;
+  color:#999999;
+  margin-right:20rpx;
+}
+.detail_top .orderTIme text{
+  font-size:22rpx;
+  color:#999999;
+  margin-right:20rpx;
+}
+.line{
+  height:16rpx;
+  width:100%;
+  background:#F5F5F5;
+}
+.detail_list{
+  padding:20rpx 0;
+}
+.kuaidi{
+  font-size:26rpx;
+}
+.detail_list .title{
+  font-size:28rpx;
+  margin-bottom: 15rpx;
+}
+.order_infor text{
+  font-size:24rpx;
+  color:#999999;
+  margin-right:20rpx;
+}
+.order_addr{
+  font-size:24rpx;
+  color:#999999;
+  margin-top: 10rpx;
+}
+.order_addr text{
+  margin-right:20rpx;
+}
+.item_cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    padding:20rpx 30rpx;
+}
+
+.icon_pic {
+    width: 130rpx;
+    height:130rpx;
+}
+
+.icon_pic image {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.group_list {
+    margin-left:25rpx;
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 5rpx 0 10rpx;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.group_list .list_name {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+.list_name .name{
+  font-size:28rpx;
+  color:#333333;
+}
+.list_name .price{
+  font-size:28rpx;
+  color:#333333;
+}
+.group_list .list_cont{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  margin-top: 20rpx;
+}
+.list_cont .describe{
+  font-size:22rpx;
+  color:#999999;
+  line-height: 34rpx;
+}
+.list_cont .number{
+  font-size:24rpx;
+  color:#999999;
+}
+.number .fh{
+  font-size: 22rpx;
+  color:#999999;
+} 
+.order_cont{
+  padding:0 30rpx;
+}
+.wlxx{
+  border-top:1px solid #eee;
+}
+.operate{
+  display: flex;
+  justify-content: flex-end;
+  padding:30rpx 30rpx;
+}
+.operate .btn{
+  border-radius: 30rpx;
+  width:150rpx;
+  height:56rpx;
+  line-height: 55rpx;
+  font-size:24rpx;
+  color:#333;
+  text-align: center;
+  border:1px solid #999;
+  margin-left:25rpx;
+}
+.operate .go{
+  color:#00B79D;
+  border:1px solid #00B79D;
+}
+.note{
+  margin-top: 10rpx;
+}
+.note text{
+  font-size:22rpx;
+  margin-right:20rpx;
+}

@@ -1,0 +1,22 @@
+<!--pages/pay/pay.wxml-->
+<view class="other1"></view>
+<view class="viewMoney">
+	<view class="other2">{{payName}}</view>
+	<view class="tvMoney">{{money}}</view>
+</view>
+<view class="other3"></view>
+<view class="other4">选择支付方式</view>
+<view class="other5"></view>
+
+<view class="viewWx" bindtap="WXClick">
+	<image class="imgPay" src="/images/ic_weixin.png"></image>
+	<view class="other6">微信</view>
+	<image class="imgZf" src="{{isWx ?'/images/ic_select.png':'/images/ic_un_select.png'}}"></image>
+</view>
+<view class="viewYe" bindtap="YEClick">
+	<image class="imgPay" src="/images/ic_26.png"></image>
+	<view class="other6">余额 ({{balance}})元 </view>
+	<image class="imgZf" src="{{isWx ==false?'/images/ic_select.png':'/images/ic_un_select.png'}}"></image>
+</view>
+<view   wx:if='{{isShould}}'  class="tvWarn" >温馨提示：应约活动双方都需要支付应约保证金。在约会时间内到达约会地点应约，应约保证金会自动退还，违约方保证金将不予退还！</view>
+	<view class="btnBuy" catchtap="goBuy">确认支付</view>

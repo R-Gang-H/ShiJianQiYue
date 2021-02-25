@@ -1,0 +1,56 @@
+/* pages/set/personalInformation/personalInformation.wxss */
+page{
+  background: #F5F5F5;
+}
+.set_cont .setlist{
+  background:#fff;
+  padding:0 30rpx;
+}
+.setlist .list_item{
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+.setlist .list_item .lis{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list_item .item_label{
+  font-size:30rpx;
+  color:#333333;
+}
+.list_item .item_right{
+  display: flex;
+}
+.item_right .right_text{
+  font-size:24rpx;
+  color:#999999;
+  align-items: center;
+}
+.right_arrow image{
+  width: 14rpx;
+  height: 25rpx;
+  margin-left: 25rpx;
+}
+.kh_servie image{
+  width:31rpx;
+  height:31rpx;
+}
+.login_out{
+  position: fixed;
+  left:0;
+  bottom:30rpx;
+  width:100%;
+  text-align: center;
+}
+.login_out .btn{
+  margin:0 30rpx;
+  background:#fff;
+  height:96rpx;
+  line-height: 96rpx;
+  border-radius: 8rpx;
+  font-size:32rpx;
+  color:#333333;
+  font-weight: normal;
+}

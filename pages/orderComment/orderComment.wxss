@@ -1,0 +1,103 @@
+/* pages/orderComment/orderComment.wxss */
+.item_group_list{
+  padding:20rpx 30rpx 0;
+}
+.item_group_list .item_cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    padding:20rpx 0;
+}
+
+.item_group_list .icon_pic {
+    width: 130rpx;
+}
+
+.icon_pic image {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.group_list {
+    margin-left:25rpx;
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 5rpx 0 10rpx;
+    min-height: 120rpx;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.group_list .list_name {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+.list_name .name{
+  font-size:28rpx;
+  color:#333333;
+}
+.list_name .price{
+  font-size:28rpx;
+  color:#333333;
+}
+.group_list .list_cont{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  margin-top: 20rpx;
+}
+.list_cont .describe{
+  font-size:22rpx;
+  color:#999999;
+  line-height: 34rpx;
+}
+.list_cont .number{
+  font-size:24rpx;
+  color:#999999;
+}
+.number .fh{
+  font-size: 22rpx;
+  color:#999999;
+} 
+.line{
+  height:16rpx;
+  width:100%;
+  background:#F5F5F5;
+}
+.formItem{
+  padding: 28rpx 30rpx;
+  margin: 30rpx;
+  border: 2rpx solid #eee;
+  border-radius: 2rpx;
+
+}
+.formItem .section{
+  height: 300rpx;
+  font-size: 26rpx;
+  color: #333;
+  width: 100%;
+  line-height: 36rpx;
+}
+.sub{
+  position: fixed;
+  left:0;
+  bottom:0;
+  background:#fff;
+  width:100%;
+  padding:30rpx 0;
+  text-align: center;
+}
+.sub button{
+  margin: 0 30rpx;
+  background: #00B69C;
+  height: 78rpx;
+  line-height: normal;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+}

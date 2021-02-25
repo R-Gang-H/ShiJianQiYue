@@ -1,0 +1,223 @@
+/**index.wxss**/
+
+.searchView {
+  width: 690rpx;
+  height: 70rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(238, 238, 238, 1);
+  box-shadow: 0px 0px 16px 0px rgba(150, 150, 150, 0.16);
+  border-radius: 8rpx;
+  align-items: center;
+  margin-left: 30rpx;
+  position: fixed;
+  display: flex;
+  z-index: 999;
+  top: 0rpx;
+  flex-direction: row;
+}
+
+.buttonView {
+  height: 70rpx;
+  widows: 140rpx;
+  position: relative;
+}
+
+.buttonLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.downIcon {
+  width: 19rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+}
+
+.lineView {
+  height: 46rpx;
+  width: 2rpx;
+  margin-left: 20rpx;
+  align-items: center;
+  background-color: #C5C5C5;
+}
+
+.searchBar {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  color: #999;
+  margin-left: 28rpx;
+}
+
+.page {
+  position: absolute;
+}
+
+.bannerView {
+  margin: 100rpx 30rpx 0rpx;
+  width: 690rpx;
+  height: 252rpx;
+}
+
+.bannerView .banner {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .bannerItem {
+  width: 100%;
+  height: 100%;
+  border-radius: 18rpx;
+}
+
+.functionButtonView {
+  margin-top: 0rpx;
+  width: 750rpx;
+  height: 206rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.functionButtonView .buttonItem {
+  width: 150rpx;
+  height: 148rpx;
+  margin-top: 58rpx;
+  text-align: center;
+}
+
+.buttonItem .buttonImageView {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.buttonItem .buttonName {
+  margin-top: 80rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: #666;
+}
+
+.threeButtonView {
+  width: 750rpx;
+  height: 108rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+}
+
+.threeButtonView .threeButtonItem {
+  border-radius: 18rpx;
+  width: 214rpx;
+  height: 108rpx;
+  border-width: 1rpx;
+  border-color: #e9e8eb;
+  border-style: solid;
+}
+
+.threeButtonItem .threeButtonTitle {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  font-family: PingFangSC;
+  margin-top: 20rpx;
+  position: absolute;
+  margin-left: 20rpx;
+}
+
+.threeButtonImageView {
+  width: 38rpx;
+  height: 42rpx;
+  position: absolute;
+  margin-top: 65rpx;
+  margin-left: 155rpx;
+}
+
+/* 最新发布 */
+
+.new {
+  font-family: PingFangSC;
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #333;
+  top: 62rpx;
+  margin-left: 30rpx;
+  position: relative;
+}
+
+.scrollView {
+  margin-top: 50rpx;
+  width: 750rpx;
+  margin-left: 0rpx;
+  position: relative;
+}
+
+.scrollView .cell {}
+
+.cell .cellImageView {
+  border-radius: 18rpx;
+  position: relative;
+  margin-top: 49rpx;
+  margin-left: 30rpx;
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.cell .titleLabel {
+  position: absolute;
+  margin-top: 49rpx;
+  font-family: PingFang SC;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 46rpx;
+  font-weight: 500;
+  margin-left: 23rpx;
+}
+
+.cell .sjImageView {
+  width: 119rpx;
+  height: 29rpx;
+}
+
+.cell .shImageView {
+  width: 85rpx;
+  height: 29rpx;
+}
+
+.cell .createTimeLabel {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+  margin-left: 23rpx;
+  position: absolute;
+  margin-top: 149rpx;
+}
+
+.cell .expireTimeLabel {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+}
+
+.cell .distanceLabel {
+  position: absolute;
+  margin-top: 149rpx;
+  right: 32rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+}

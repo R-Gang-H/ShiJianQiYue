@@ -1,0 +1,30 @@
+<!--pages/shareConversation/shareConversation.wxml-->
+<wxs module="utils" src="../../utils/util.wxs" />
+<!-- 搜索框 -->
+<view class="search">
+  <input placeholder="🔍 搜索"></input>
+</view>
+<checkbox-group bindchange="checkboxChange">
+  <block wx:for="{{array}}" wx:key="index" wx:for-item="items">
+    <view class="item" hidden="{{items.type=='@TIM#SYSTEM'}}" id="{{index}}">
+      <view wx:if="{{items.type=='C2C'}}">
+        <image wx:if="{{items.userProfile.avatar!=''}}" src="{{items.userProfile.avatar}}" />
+        <image wx:else src="{{head}}" />
+      </view>
+      <view wx:else>
+        <image wx:if="{{items.groupProfile.avatar!=''}}" src="{{items.groupProfile.avatar}}" />
+        <image wx:else src="{{head}}" />
+      </view>
+
+      <view class="desc">
+        <view class="title">
+          <view>{{items.type=='C2C'? items.userProfile.nick : items.groupProfile.name}} </view>
+          <checkbox value="{{utils.jsonToString(items)}}" checked="{{items.checked}}" />
+        </view>
+      </view>
+    </view>
+    <view class="hr2"></view>
+  </block>
+</checkbox-group>
+<emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+<button class="btnShare" catchtap="btnShare" type="primary">发送{{checkNum}}</button>

@@ -1,0 +1,24 @@
+/* pages/set/useragreement/useragreement.wxss */
+.agreement{
+  padding:40rpx 50rpx 0;
+}
+.agreement .agreement_list:first-child{
+  text-indent: 2em;
+}
+.agreement .agreement_list{
+  font-size:24rpx;
+  line-height: 44rpx;
+  color: #696868;
+  text-align: justify;
+  margin-bottom: 40rpx;
+}
+.list_title{
+  font-weight: bold;
+  margin: 15rpx 0;
+}
+.list_txt{
+  margin-bottom: 15rpx;
+}
+.cont{
+  margin-bottom: 15rpx;
+}

@@ -1,0 +1,15 @@
+/* components/emptyPage/emptyPage.wxss */
+.empty{
+  text-align: center;
+  margin-top:380rpx;
+  margin-bottom:200rpx;
+}
+.empty image{
+  width:393rpx;
+  height:255rpx;
+}
+.empty .text{
+  font-size:26rpx;
+  color:#C6C6CE;
+  margin-top:9rpx;
+}

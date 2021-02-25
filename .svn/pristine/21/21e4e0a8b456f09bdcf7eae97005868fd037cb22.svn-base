@@ -1,0 +1,144 @@
+/* pages/pay/pay.wxss */
+.other1 {
+  width: 100%;
+  height: 1px;
+  background: rgba(238, 238, 238, 1);
+}
+
+.viewMoney {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  height: 106rpx;
+}
+
+.viewMoney .other2 {
+  margin-top: 38rpx;
+  margin-left: 37rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.tvMoney {
+  position: absolute;
+  right: 0;
+  margin-top: 37rpx;
+  margin-right: 30rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(0, 184, 158, 1);
+}
+
+.other3 {
+  width: 100%;
+  height: 16rpx;
+  margin-top: 106rpx;
+  background: rgba(238, 238, 238, 1);
+}
+
+.other4 {
+  margin-top: 34rpx;
+  margin-left: 30rpx;
+  margin-bottom: 34rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.other5 {
+  width: 100%;
+  height: 1rpx;
+  background: rgba(238, 238, 238, 1);
+}
+
+.viewWx {
+  margin-top: 20rpx;
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  height: 100rpx;
+}
+
+.imgPay {
+  height: 58rpx;
+  width: 58rpx;
+  margin-left: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+}
+
+.other6 {
+  margin-top: 12rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+
+.imgZf {
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  right: 0;
+  margin-top: 17rpx;
+  margin-right: 30rpx;
+}
+
+.viewYe {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  height: 100rpx;
+}
+
+.tvWarn {
+
+  margin-top: 12rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.btnBuy {
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  height: 88rpx;
+  margin-left: 65rpx;
+  margin-right: 65rpx;
+  margin-bottom: 56rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+  background-color: #00b89e;
+}

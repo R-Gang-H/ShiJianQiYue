@@ -1,0 +1,49 @@
+<!--pages/set/newAddress/newAddress.wxml-->
+<view class="add_address">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section">
+          <view class="section_title">联系人</view>
+          <input name="name" value="{{name}}" placeholder="请输入联系人姓名" />
+      </view>
+      <view class="section section_gap">
+          <view class="section_title"></view>
+          <radio-group name="radio">
+           
+            <label  wx:if="{{sex != 1 && sex !=2}}" ><radio value="1" checked="checked" />男</label>
+            <label  wx:if="{{sex != 1 && sex !=2}}" ><radio value="2"  />女</label>
+            
+            <label  wx:if="{{sex == 1}}" ><radio value="1" checked="checked" />男</label>
+            <label  wx:if="{{sex == 1}}" ><radio value="2"  />女</label>
+
+            <label  wx:if="{{sex == 2}}" ><radio value="1"  />男</label>
+            <label  wx:if="{{sex == 2}}" ><radio value="2" checked="checked" />女</label>
+          </radio-group>
+      </view>
+      <view class="section">
+          <view class="section_title">手机号码</view>
+          <input name="phone" value="{{mobile}}" placeholder="请填写收货人手机号" />
+      </view>
+      <view class="section">
+          <view class="section_title">收货地址</view>
+          <view class="choice">
+              <view class='address' bindtap='onChangeAddress'>
+                <!-- <input name="address" wx:if="{{isEdit}}" class='choose-address' placeholder='{{address}}' value='{{chooseAddress}}'></input> -->
+                <!-- <view  ></view> -->
+                <view  wx:if="{{isEdit}}" class="xz_address">
+                  <input name="address" class='choose-address' placeholder='{{address}}' value='{{chooseAddress}}'></input>
+                </view>
+                <input name="address" wx:else class='choose-address' placeholder='请选取地点' value='{{chooseAddress}}'></input>
+              </view>
+              <image class="" src="../../../images/arrow.png"></image>
+          </view>
+      </view>
+      <view class="section">
+          <view class="section_title">门牌号</view>
+          <input name="number" value="{{address2}}" placeholder="街道、楼牌号等" />
+      </view>
+      <view class="btn-area">
+          <button style="width:100%" formType="submit" class="submit">{{isEdit ? '修改' : '保存'}}</button>
+          <button style="width:100%" wx:if="{{isEdit==true}}" formType="delete" bindtap="deleteAddress" class="delete">删除</button>
+      </view>
+    </form>
+</view>

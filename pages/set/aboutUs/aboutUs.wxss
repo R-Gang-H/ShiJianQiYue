@@ -1,0 +1,21 @@
+/* pages/set/aboutUs/aboutUs.wxss */
+.aboutus .logo{
+  text-align: center;
+}
+.aboutus image{
+  width: 130rpx;
+  height: 180rpx;
+  margin: 0 auto;
+  margin-top: 25rpx;
+}
+.aboutus .cont{
+  padding:50rpx 50rpx 0;
+}
+.aboutus .cont .text{
+  font-size:24rpx;
+  line-height: 50rpx;
+  color:#333;
+  text-indent: 2em;
+  text-align: justify;
+  margin-bottom: 40rpx;
+}

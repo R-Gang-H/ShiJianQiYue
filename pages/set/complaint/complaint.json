@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "投诉建议",
+  "usingComponents": {
+    "imgupload": "../components/imgupload/imgupload"
+  }
+}

@@ -1,0 +1,68 @@
+<!--pages/shopOrderDetail/shopOrderDetail.wxml-->
+<view class="orderDetail">
+    <view class="detail_top">
+        <view class="list_status">{{data.statusName}}</view>
+        <view class="orderCode"><text class="label">订单编号</text><text class="code_num">{{data.orderNumber}}</text></view>
+        <view class="orderTIme"><text class="label">下单时间</text><text class="time">{{data.createTime}}</text></view>
+    </view>
+    <view class="line"></view>
+    <view class="order_cont">
+      <view class="detail_list">
+          <view class="title">收货地址</view>
+          <view class="order_infor">
+              <text class="name">{{data.uname}}</text>
+              <text class="phone">{{data.mobile}}</text>
+          </view>
+          <view class="order_addr">{{data.address}}</view>
+          <view class="note">
+            <text>备注</text>
+            <text>{{data.remark}}</text>
+          </view>
+      </view>
+      <view class="detail_list wlxx" wx:if="{{data.status == 3||data.status == 4}}">
+          <view class="title">物流信息</view>
+          <view class="order_infor">
+              <text class="kuaidi">{{data.logisticsName}}</text>
+              <text class="phone">{{data.logisticsSku}}</text>
+          </view>
+          <view class="order_addr"><text>发货时间</text><text>{{data.updateTime}}</text></view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="item_cont" data-productId="{{ data.productIds }}" bindtap="productDetail">
+      <view class="icon_pic">
+        <image src="{{data.productImages}}"></image>
+      </view>
+      <view class="group_list">
+        <view class="list_name">
+          <view class="name">{{data.productNames}}</view>
+          <view class="price">¥{{data.totalPrice}}</view>
+        </view>
+        <view class="list_cont">
+          <view class="describe">{{data.productSpecs}}</view>
+          <view class="number"><text class="fh">{{fh}}</text>{{data.productNum}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="operate">
+      <view wx:if="{{data.status == 1}}" class="btn go" data-orderId="{{ data.orderId }}" bindtap="showDialogBtn">去发货</view>
+    </view>
+    <!-- 物流弹出框 -->
+    <view class="modal-mask" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-title">物流信息</view>
+      <form bindsubmit="formSubmit" class="profile">
+        <view class="modal-content">
+          <view class="modal-input">
+            <input name="logisticsName" placeholder="请输入物流公司" />
+            <input name="logisticsSku" placeholder="请输入物流单号" />
+          </view>
+        </view>
+        <view class="modal-footer">
+          <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+          <button form-type="submit" data-orderId="{{orderId}}" class="btn-confirm">提交</button>
+        </view>
+      </form>
+    </view> 
+</view>

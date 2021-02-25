@@ -1,0 +1,222 @@
+<wxs module="utils" src="../../utils/util.wxs" />
+<view class="bo">
+  <image class="groupIcon" mode="aspectFit" hidden="{{!isGroup}}" src="/images/conversation-profile.png"
+    bindtap="goGroupPrifile" />
+  <view id="x_chat">
+    <view style="padding-bottom:{{bottomHeight}}rpx;">
+      <view class="body" wx:for='{{messageList}}' wx:key='index'>
+        <!-- 右消息 -->
+        <view wx:if='{{item.flow=="out"}}' class="right_body">
+          <view class="flexRoe posRit">
+            <view class="textBo">
+              <view class="dataTime">{{isGroup?userName:utils.getDateTime(item.time,'M-D h:m:s')}}</view>
+              <view wx:if="{{item.type=='TIMTextElem'}}" class="ritTxt">{{item.payload.text}}</view>
+              <image wx:if="{{item.type=='TIMImageElem'}}" bindtap="preImage"
+                data-src="{{item.payload.imageInfoArray[0].url}}" mode='aspectFit' lazy-load class="textImg"
+                src="{{item.payload.imageInfoArray[0].url}}"
+                style="width:{{item.payload.imageInfoArray[0].width*2}}rpx;height:{{item.payload.imageInfoArray[0].height*2}}rpx;" />
+              <view wx:if="{{item.type=='TIMAudioElem'}}" bindtap='my_sound_click'
+                data-src="{{item.payload.audioUrl}}" />
+              <view wx:if="{{item.type=='TIMVideoFileElem'}}" data-src="{{item.payload.videoUrl}}">
+                <video src="{{item.payload.videoUrl}}" class="textImg" controls
+                  style="width:{{item.payload.thumbWidth*2}}rpx;height:{{item.payload.thumbHeight*2}}rpx;" />
+              </view>
+              <view wx:if="{{item.type=='TIMFileElem'}}" class="ritFile3" bindtap='my_file_click'>
+                <view class="fileText3">
+                  <text style="margin-top:5rpx;">{{item.payload.fileName}}</text>
+                  <text
+                    style="margin-top:8rpx;color:#999;font-size:25rpx;">{{utils.toFixed(item.payload.fileSize/1024/1024,2)}}M</text>
+                </view>
+                <image style="width:100rpx;height:100rpx;margin-left:10rpx;" src="/images/file.png" />
+              </view>
+              <view wx:if="{{item.type=='TIMSoundElem'}}" class="ritSound4" bindtap='playTop'
+                data-src="{{item.payload.url}}" data-id='{{index}}' data-time="{{item.payload.second}}"
+                style="width:{{item.payload.second*20}}rpx;">
+                <!--没有播放时图片为 playing2_r.png-->
+                <image class="record_r_img" hidden="{{showOrhidden&&playId==index}}" src="/images/playing2_r.png" />
+                <!--播放时图片为 audio3.png-->
+                <view hidden="{{!showOrhidden||playId!=index}}">
+                  <image class="record_r_img" wx:if="{{playing==1}}" src="/images/playing0_r.png"></image>
+                  <image class="record_r_img" wx:if="{{playing==2}}" src="/images/playing1_r.png"></image>
+                  <image class="record_r_img" wx:if="{{playing==3}}" src="/images/playing2_r.png"></image>
+                </view>
+                <text class="time_r_voice">{{item.payload.second}}"</text>
+              </view>
+              <view wx:if="{{item.type=='TIMCustomElem'}}" class="ritCus5" bindtap='my_custom_click'
+                data-datas="{{utils.stringToJson(item.payload.data)}}">
+                <view class="ritTitle">
+                  <image style="margin-top:20rpx;width:6rpx;height:36rpx;" src="{{custom}}" />
+                  <text>{{utils.stringToJson(item.payload.data).shopName}}</text>
+                </view>
+                <view class="ritContent">
+                  <image style="width:108rpx;height:108rpx;margin-left:26rpx;border-radius:10rpx;background:#EEEEEE;"
+                    src="{{utils.stringToJson(item.payload.data).goodsImage}}" />
+                  <view class="fileText3">
+                    <text
+                      style="margin-top:9rpx;color:#333;font-size:24rpx;">{{utils.stringToJson(item.payload.data).msgTitle}}</text>
+                    <text
+                      style="margin-top:16rpx;color:#999;font-size:22rpx;">{{utils.stringToJson(item.payload.data).msgContent}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <image class="head" bindtap='getUserInof' mode='aspectFill' data-userId="{{item.from}}"
+              wx:if="{{userAvater!=''}}" src="{{userAvater}}" />
+            <image class="head" bindtap='getUserInof' data-userId="{{item.from}}" wx:else src="{{head}}" />
+          </view>
+        </view>
+        <!-- 左消息 -->
+        <view wx:if='{{item.flow=="in"}}'>
+          <view wx:if='{{item.type=="TIMGroupTipElem"}}' class="gTip">
+            <label class="groupTip">
+              <!--1 有成员加群 -->
+              <view wx:if="{{item.payload.operationType==1}}">"
+                <text style='color:blue;'>{{item.payload.operatorID}}</text>"邀请"
+                <text style='color:blue;'>{{item.payload.userIDList}}</text>"加入群组
+              </view>
+              <!--2 有群成员退群 -->
+              <view wx:if="{{item.payload.operationType==2}}">"
+                <text style='color:blue;'>{{item.payload.userIDList}}</text>"退出群组
+              </view>
+              <!--3 有群成员被踢出群 -->
+              <view wx:if="{{item.payload.operationType==3}}">"
+                <text style='color:blue;'>{{item.payload.operatorID}}</text>"将"
+                <text style='color:blue;'>{{item.payload.userIDList}}</text>"移出群组
+              </view>
+              <!--4 有群成员被设为管理员 -->
+              <view wx:if="{{item.payload.operationType==4}}">"
+                <text style='color:blue;'>{{item.payload.operatorID}}</text>"将"
+                <text style='color:blue;'>{{item.payload.userIDList}}</text>"设为管理员
+              </view>
+              <!--5 有群成员被撤销管理员 -->
+              <view wx:if="{{item.payload.operationType==5}}">"
+                <text style='color:blue;'>{{item.payload.operatorID}}</text>"将"
+                <text style='color:blue;'>{{item.payload.userIDList}}</text>"管理员撤销
+              </view>
+              <!--6 群组资料变更 -->
+              <view wx:if="{{item.payload.operationType==6}}">"
+                <text style='color:blue;'>{{item.payload.operatorID}}</text>"变更群组资料"
+              </view>
+              <!--7 群成员资料变更，例如：群成员被禁言 -->
+              <view wx:if="{{item.payload.operationType==7}}">"
+                <text style='color:blue;'>{{item.payload.operatorID}}</text>"将"
+                <text style='color:blue;'>{{item.payload.memberList.userID}}</text>"设为禁言
+              </view>
+            </label>
+          </view>
+          <view wx:else class="left_body">
+            <view class="flexRoe">
+              <image class="head" bindtap='getUserInof' mode='aspectFill' data-userId="{{item.from}}"
+                wx:if="{{item.avatar!=''}}" src="{{avatarH+utils.heAddresss(item.avatar)}}" />
+              <image class="head" bindtap='getUserInof' data-userId="{{item.from}}" wx:else src="{{head}}" />
+              <view class="lfBo">
+                <view class="dataTime">{{isGroup?item.nick:utils.getDateTime(item.time,'M-D h:m:s')}}</view>
+                <view wx:if="{{item.type=='TIMTextElem'}}" class="lftTxt">{{item.payload.text}}</view>
+                <image wx:if="{{item.type=='TIMImageElem'}}" bindtap="preImage"
+                  data-src="{{item.payload.imageInfoArray[0].url}}" mode='aspectFit' lazy-load class="textImg"
+                  src="{{item.payload.imageInfoArray[0].url}}"
+                  style="width:{{item.payload.imageInfoArray[0].width*2}}rpx;height:{{item.payload.imageInfoArray[0].height*2}}rpx;" />
+                <view wx:if="{{item.type=='TIMAudioElem'}}" bindtap='my_sound_click'
+                  data-src="{{item.payload.audioUrl}}" />
+                <view wx:if="{{item.type=='TIMVideoFileElem'}}" data-src="{{item.payload.videoUrl}}">
+                  <video src="{{item.payload.videoUrl}}" class="textImg"
+                    style="width:{{item.payload.thumbWidth*2}}rpx;height:{{item.payload.thumbHeight*2}}rpx;" />
+                </view>
+                <view wx:if="{{item.type=='TIMFileElem'}}" class="lftFile3" bindtap='my_file_click'>
+                  <view class="fileText3">
+                    <text style="margin-top:5rpx;">{{item.payload.fileName}}</text>
+                    <text
+                      style="margin-top:8rpx;color:#999;font-size:25rpx;">{{utils.toFixed(item.payload.fileSize/1024/1024,2)}}M</text>
+                  </view>
+                  <image style="width:100rpx;height:100rpx;margin-left:10rpx;" src="/images/file.png" />
+                </view>
+                <view wx:if="{{item.type=='TIMSoundElem'}}" class="lftSound4" bindtap='playTop'
+                  data-src="{{item.payload.url}}" data-id='{{index}}' data-time="{{item.payload.second}}"
+                  style="width:{{item.payload.second*20}}rpx;">
+                  <!--没有播放时图片为 playing2_r.png-->
+                  <image class="record_l_img" hidden="{{showOrhidden&&playId==index}}" src="/images/playing2_l.png" />
+                  <!--播放时图片为 audio3.png-->
+                  <view hidden="{{!showOrhidden||playId!=index}}">
+                    <image class="record_l_img" wx:if="{{playing==1}}" src="/images/playing0_l.png"></image>
+                    <image class="record_l_img" wx:if="{{playing==2}}" src="/images/playing1_l.png"></image>
+                    <image class="record_l_img" wx:if="{{playing==3}}" src="/images/playing2_l.png"></image>
+                  </view>
+                  <text class="time_l_voice">{{item.payload.second}}"</text>
+                </view>
+                <view wx:if="{{item.type=='TIMCustomElem'}}" class="ritCus5" bindtap='my_custom_click'
+                  data-datas="{{utils.stringToJson(item.payload.data)}}">
+                  <view class="ritTitle">
+                    <image style="margin-top:20rpx;width:6rpx;height:36rpx;" src="{{custom}}" />
+                    <text>{{utils.stringToJson(item.payload.data).shopName}}</text>
+                  </view>
+                  <view class="ritContent">
+                    <image style="width:108rpx;height:108rpx;margin-left:26rpx;border-radius:10rpx;background:#EEEEEE;"
+                      src="{{utils.stringToJson(item.payload.data).goodsImage}}" />
+                    <view class="fileText3">
+                      <text
+                        style="margin-top:9rpx;color:#333;font-size:24rpx;">{{utils.stringToJson(item.payload.data).msgTitle}}</text>
+                      <text
+                        style="margin-top:16rpx;color:#999;font-size:22rpx;">{{utils.stringToJson(item.payload.data).msgContent}}</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+    </view>
+    <!-- 聊天 -->
+    <view class="inp">
+      <form action='' method="post">
+        <!-- 聊天框 -->
+        <view class="p_r">
+          <view class="yuyin" catchtap='voice_icon_click'>
+            <image wx:if="{{!voice_icon_click}}" src="/images/chat_yuyin.png" style="width:52rpx;height:52rpx;" />
+            <image wx:else src="/images/ic_input_keyboard.png" style="width:52rpx;height:52rpx;" />
+          </view>
+          <input wx:if="{{!voice_icon_click}}" class="input" type="text"
+            value="{{utils.saveText(title)}}" />
+          <text wx:else class="input" style="display:flex;justify-content:center;align-items:center;"
+            catchtouchstart='voice_ing_start' catchtouchend="voice_ing_end">按住 说话</text>
+          <!--<image class="addSmile" src="/images/chat_smile.png" style="width:60rpx;height:60rpx;" catchtap="addSmile" />-->
+          <block>
+            <input style="width:100rpx;" wx:if='{{isFace}}' class="sendMsg" confirm-type="send" bindconfirm='sendText' value="发送"/>
+            <image wx:else class="addfile" src="/images/chat_add.png" style="width:52rpx;height:52rpx;"
+              catchtap="add_show_atta" />
+
+          </block>
+        </view>
+      </form>
+
+      <!-- 附件框 -->
+      <view class="atta" hidden="{{!add_icon_click}}">
+        <view class="chat_atta" bindtap="sendImage">
+          <image src="/images/ic_more_picture.png" style="width:120rpx;height:120rpx;" />
+          <text>图片</text>
+        </view>
+        <view class="chat_atta" bindtap="sendVideo">
+          <image src="/images/ic_more_video.png" style="width:120rpx;height:120rpx;" />
+          <text>视频</text>
+        </view>
+        <view class="chat_atta" bindtap="sendFile">
+          <image src="/images/ic_more_file.png" style="width:120rpx;height:120rpx;" />
+          <text>文件</text>
+        </view>
+      </view>
+
+      <!--emoji表情盒子-->
+      <view hidden="{{isShow}}" class="emoji-box{{isLoad ? 'no-emoji-move' : ''}}">
+        <scroll-view scroll-y="true" bindscroll="emojiScroll" style="height:200px">
+          <block wx:for="{{emojis}}" wx:for-item="e" wx:key="">
+            <image class="emoji-cell" catchtap="emojiChoose" mode='aspectFill' lazy-load='true'
+              src="http://soupu.oss-cn-shanghai.aliyuncs.com/emoji/{{e.emoji}}.png" data-emoji="{{e.char}}"
+              data-oxf="{{e.emoji}}"></image>
+          </block>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+</view>

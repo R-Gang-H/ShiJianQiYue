@@ -1,0 +1,254 @@
+/* pages/myShopOrder/myShopOrder.wxss */
+page{
+  background: #F5F5F5;
+}
+.tabs {
+    display: flex;
+    height: 85rpx;
+    line-height: 85rpx;
+    border-bottom: #EBECF1 1rpx solid;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    z-index: 1;
+}
+
+.tabs .item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.tabs .item text {
+    font-size: 28rpx;
+    color: #999999;
+    display: inline-block;
+    height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.tabs .itemed text {
+    color: #333333;
+    font-weight: bold;
+}
+
+.tabs .itemed .h_line {
+    width: 66rpx;
+    height: 4rpx;
+    background: #00B89E;
+    position: absolute;
+    bottom: -1rpx;
+    left: 50%;
+    margin-left: -33rpx;
+}
+
+.gsjsContain{
+  margin-top:100rpx;
+}
+.item_group {
+    padding: 0 30rpx;
+    background: #fff;
+    margin-bottom:15rpx;
+}
+.item_group_list .order_code{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:20rpx 0;
+  border-bottom:1px solid #EEEEEE;
+}
+.code_num{
+  margin-left:10rpx;
+}
+.order_code .code{
+  font-size:24rpx;
+  color:#999999;
+}
+.order_code .state{
+  font-size:24rpx;
+  color:#999999;
+}
+.item_group_list .item_cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    padding:20rpx 0;
+}
+
+.item_group_list .icon_pic {
+    width: 130rpx;
+    height:130rpx;
+}
+
+.icon_pic image {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.group_list {
+    margin-left:25rpx;
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 5rpx 0 10rpx;
+    min-height: 120rpx;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.group_list .list_name {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+.list_name .name{
+  font-size:28rpx;
+  color:#333333;
+}
+.list_name .price{
+  font-size:28rpx;
+  color:#333333;
+}
+.group_list .list_cont{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  margin-top: 20rpx;
+}
+.list_cont .describe{
+  font-size:22rpx;
+  color:#999999;
+  line-height: 34rpx;
+}
+.list_cont .number{
+  font-size:24rpx;
+  color:#999999;
+}
+.number .fh{
+  font-size: 22rpx;
+  color:#999999;
+} 
+.order_bot{
+  width:100%;
+  border-top:1px solid #EEEEEE;
+  padding:25rpx 0;
+}
+.order_bot .total{
+  font-size:24rpx;
+  color:#999999;
+  display: flex;
+  justify-content: space-between;
+}
+.total text{
+  margin-left: 20rpx;
+}
+.total .time{
+  margin-left: 0;
+}
+.total .time text{
+  margin-left: 0;
+  margin-right: 10rpx;
+}
+.total text.jiage{
+  font-size:28rpx;
+  color:#333333;
+}
+.order_bot .operate{
+  display: flex;
+  justify-content: flex-end;
+}
+.operate .btn{
+  border-radius: 30rpx;
+  width:150rpx;
+  height:56rpx;
+  line-height: 55rpx;
+  font-size:24rpx;
+  color:#333;
+  text-align: center;
+  border:1px solid #999;
+  margin-left:25rpx;
+  margin-top: 20rpx;
+}
+.operate .go{
+  color:#00B79D;
+  border:1px solid #00B79D;
+}
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 85%;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: #fff;
+}
+.modal-title {
+  padding-top: 40rpx;
+  font-size: 34rpx;
+  color: #030303;
+  text-align: center;
+}
+.modal-content {
+  padding: 40rpx 40rpx;
+}
+.modal-input input {
+  padding:0 25rpx;
+  width: 100%;
+  height: 78rpx;
+  font-size: 30rpx;
+  line-height: 78rpx;
+  box-sizing: border-box;
+  background: #F6F6F6;
+  border-radius: 8rpx;
+  color: #333;
+  margin-bottom:20rpx;
+}
+.modal-input .input:last-child{
+  margin-bottom: 0;
+}
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 98rpx;
+  border-top: 1px solid #EEEEEE;
+  font-size: 36rpx;
+  line-height: 98rpx;
+}
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.btn-confirm {
+  width: 50%;
+  color: #00B79D;
+  text-align: center;
+  padding:0;
+  line-height: 98rpx;
+  border-radius: none;
+  font-size: 36rpx;
+  font-weight: normal;
+}

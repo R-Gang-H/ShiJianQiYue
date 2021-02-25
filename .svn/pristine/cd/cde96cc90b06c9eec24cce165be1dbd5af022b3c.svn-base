@@ -1,0 +1,18 @@
+<!--pages/confirmDue/confirmDue.wxml-->
+
+<view class="other1"></view>
+<view ew class="infor_list">
+	<view class="list_label">请选择应约份数</view>
+	<view class="list_right">
+		<input class="weui-input" bindblur="changeNum" 
+    type="number"
+    name="name" value="{{name}}" />
+    <view class="tvDesc">份</view>
+
+	</view>
+</view>
+
+<view class="tvDesc">{{moneyDesc}}</view>
+
+<view class="tvWarn">温馨提示：交易双方都需要缴纳保证金，保证金金额根据卖家设定的单位保证金及购买的数量计算得出，双方保证金金额相等。在约定时间完成交易，保证金将自动退还，违约方保证金将不予退还。</view>
+<view class="btnBuy" catchtap="productJoin" >确认</view>

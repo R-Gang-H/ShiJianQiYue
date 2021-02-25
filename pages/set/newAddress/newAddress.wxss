@@ -1,0 +1,102 @@
+/* pages/set/newAddress/newAddress.wxss */
+.add_address{
+  padding:0 30rpx;
+}
+.section{
+  display: flex;
+  justify-content: flex-start;
+  padding:30rpx 0;
+  border-bottom:1rpx solid #EEEEEE;
+  align-items: center;
+}
+.section .section_title{
+  flex:0 0 150rpx;
+  font-size:28rpx;
+  color:#666666;
+}
+.section radio-group{
+  display: flex;
+  align-items: center;
+}
+.section label:first-child{
+  margin-right:175rpx;
+}
+.section label{
+  font-size:28rpx;
+  color:#222222;
+}
+.section radio{
+  margin-right: 20rpx;
+}
+/* 未选中的样式 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;     /* 圆角 */
+  /* border: 2rpx solid red; */
+}
+
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;     /* 圆角 */
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 28rpx;       /* 勾大小 */
+  color: #fff;			/* 白色勾  */
+  background: #00B69C;
+  transform: translate(-50%, -50%) scale(1);
+}
+.xz_address{
+  margin-right: 20rpx;
+}
+.address{
+  flex:1;
+  margin-right: 20rpx;
+}
+.xz_address textarea{
+  width:auto;
+  height:auto;
+}
+.section input{
+  font-size:28rpx;
+  color:#222222;
+}
+.section .choice{
+  display: flex;
+  justify-content:space-between;
+  width:100%;
+  align-items: center;
+}
+.section .choice .text{
+  font-size:28rpx;
+  color:#ccc;
+}
+.section .choice image{
+  width:14rpx;
+  height:25rpx;
+}
+.btn-area{
+  margin-top: 100rpx;
+}
+.btn-area button{
+  background: #00B69C;
+  height: 78rpx;
+  line-height: normal;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+  margin-bottom: 30rpx;
+}
+.btn-area .submit{
+  border:1px solid transparent;
+  background: #00B69C;
+  color:#fff;
+}
+.btn-area .delete{
+  border:1px solid #00B69C;
+  background: transparent;
+  color:#00B69C;
+}

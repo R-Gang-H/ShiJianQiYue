@@ -1,0 +1,10 @@
+<!--pages/sharePrompt/sharePrompt.wxml-->
+
+	<image src="/images/ic_share_bg.png"></image>
+	<text class="tvShare" >转发到圈子，
+        \n如果有人根据您转发的链接购买商品，
+\n您将获得商品价值的3%奖励。</text>
+			<navigator class="" bindtap="shareClick" url="" hover-class="none" open-type="navigate">
+				<text class="btnShare">转发</text>
+			</navigator>
+

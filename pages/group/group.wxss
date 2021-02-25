@@ -1,0 +1,280 @@
+/* pages/communication/communication.wxss */
+
+/* tabs 导航栏 start */
+
+.tabSearch {
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+}
+
+.tabs {
+  display: flex;
+  height: 80rpx;
+}
+
+.tabs .tab {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.tabs .tab text {
+  font-size: 34rpx;
+  color: #999;
+  display: inline-block;
+  height: 65rpx;
+  padding: 0 5rpx;
+}
+
+.tabs .itemed text {
+  color: #333;
+  font-weight: bold;
+}
+
+.tabs .itemed .h_triangle::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-top: 15rpx solid #00b89e;
+  position: relative;
+  bottom: -3rpx;
+}
+
+/* tabs 导航栏 end */
+
+/* search 搜索框 start */
+
+.search {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 60rpx;
+  background: #f6f6f6;
+  border-radius: 8rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.search input {
+  font-size: 26rpx;
+  height: 60rpx;
+}
+
+/* search 搜索框 end */
+
+/* 聊天 start */
+
+.tabContent {
+  z-index: 10;
+  margin-top: 160rpx;
+}
+
+.hr2 {
+  height: 2rpx;
+  background-color: #ccc;
+  opacity: 0.2;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+
+  margin: 20rpx 30rpx;
+}
+
+.item image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50rpx;
+  margin-top: 20rpx;
+}
+
+.item .desc {
+  margin-left: 20rpx;
+  position: relative;
+  align-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.desc .titleView {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 15rpx;
+
+}
+
+.titleView .title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.titleView .msgtime {
+  position: absolute;
+  right: 40rpx;
+  font-size: 22rpx;
+  color: #999;
+}
+
+.desc .countView {
+  /* font-size: 24rpx;
+  color: #999; */
+  display: flex;
+  /* justify-content: flex-start;
+  width: 100%; */
+}
+.countView .count {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  color: rgba(153, 153, 153, 1);
+}
+
+.msgcount {
+  min-width: 25rpx;
+  max-height: 25rpx;
+  position: absolute;
+
+  right: 45rpx;
+  font-size: 18rpx;
+  color: #fff;
+  border-radius: 50rpx;
+  background-color: #ff4f45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 聊天 end */
+
+/* 关注 start*/
+
+.item_group_list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: top;
+  margin: 20rpx 30rpx;
+}
+
+.item_group_list .icon_pic {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.icon_pic image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.group_list {
+  margin-left: 25rpx;
+  position: relative;
+  align-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5rpx 0 10rpx;
+  min-height: 120rpx;
+}
+
+.group_list .list_name {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.list_name .type_shop {
+  width: 85rpx;
+  height: 29rpx;
+}
+
+.list_name .type_shuji {
+  width: 119rpx;
+  height: 29rpx;
+}
+
+.list_name .name {
+  font-size: 28rpx;
+  margin-left: 19rpx;
+  color: #333;
+  line-height: 38rpx;
+}
+
+.group_list .list_time {
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.list_time .time {
+  margin-right: 19rpx;
+}
+
+.group_list .list_content {
+  font-size: 26rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.red_envelopes {
+  width: 97rpx;
+  height: 29rpx;
+  position: relative;
+}
+
+.red_envelopes image {
+  width: 97rpx;
+  height: 29rpx;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.red_envelopes .money {
+  position: absolute;
+  top: 2rpx;
+  left: 28rpx;
+  font-size: 20rpx;
+  color: #de0006;
+  width: 66rpx;
+  text-align: center;
+}
+
+.list_distance {
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.broadcast {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+
+.broadcast_play {
+  position: absolute;
+  right: 0;
+  bottom: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 关注 end */

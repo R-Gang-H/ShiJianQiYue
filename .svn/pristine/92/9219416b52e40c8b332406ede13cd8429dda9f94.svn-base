@@ -1,0 +1,108 @@
+/* pages/shareConversation/shareConversation.wxss */
+
+/* search 搜索框 start */
+
+.search {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 60rpx;
+  background: #f6f6f6;
+  border-radius: 8rpx;
+  text-align: center;
+}
+
+.search input {
+  font-size: 26rpx;
+  height: 60rpx;
+}
+
+/* search 搜索框 end */
+
+/* 聊天 start */
+
+.hr2 {
+  height: 2rpx;
+  background-color: #ccc;
+  opacity: 0.2;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  padding-left: 30rpx;
+  padding-right: 38rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  align-items: center;
+}
+
+.item image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50rpx;
+}
+
+.desc {
+  width: 85%;
+  padding-left: 40rpx;
+  line-height: 45rpx;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  color: #333;
+}
+
+/*checkbox 整体大小  */
+
+.title checkbox {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 35rpx;
+}
+
+/*checkbox 选项框大小  */
+
+.title checkbox .wx-checkbox-input {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+/*checkbox选中后样式  */
+
+.title checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #00b89e;
+}
+
+/*checkbox选中后图标样式  */
+
+.title checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/* 聊天 end */
+
+/* 发送按钮 start */
+
+.btnShare {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00B89E;
+  font-size: 30rpx;
+  color: #fff;
+  justify-content: center;
+  margin: 20rpx auto;
+}

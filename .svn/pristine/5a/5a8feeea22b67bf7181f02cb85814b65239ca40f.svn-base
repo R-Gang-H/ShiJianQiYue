@@ -1,0 +1,274 @@
+/* pages/confirmOrder/confirmOrder.wxss */
+/* 购买商品确认订单 */
+.other1 {
+  width: 100%;
+  height: 1px;
+  background: rgba(238, 238, 238, 1);
+}
+
+.viewAddress {
+
+  overflow: hidden;
+}
+
+/* 标题 */
+.viewHead {
+  float: left;
+}
+
+.viewTitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.tvTitle {
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #222222;
+  margin-left: 30rpx;
+  margin-top: 32rpx;
+}
+
+.tvPhone {
+  margin-left: 28rpx;
+  margin-top: 32rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.tvAddress {
+  /* 字号 */
+  font-size: 22rpx;
+  /* 文字颜色 */
+  color: #333333;
+  /* 上边距 */
+  margin-top: 24rpx;
+  /* 左边距 */
+  margin-left: 30rpx;
+  margin-bottom: 30rpx;
+
+}
+
+.imgShare {
+  width: 14rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 0;
+  margin-right: 30rpx;
+  margin-top: 56rpx;
+}
+
+.other2 {
+  background-color: #F5F5F5;
+  height: 16rpx;
+}
+
+/* 商品 */
+.tvShopName {
+  margin-top: 26rpx;
+  margin-left: 31rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.other3 {
+  margin-top: 24rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 1rpx;
+  background: rgba(238, 238, 238, 1);
+}
+
+.viewGoods {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  height: 170rpx;
+}
+
+.imgGoods {
+  width: 130rpx;
+  height: 130rpx;
+  background: rgba(246, 246, 246, 1);
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.viewName {
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.viewName .tvName {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.viewName .tvDesc {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 20rpx;
+
+}
+
+.viewPrice {
+  position: absolute;
+  right: 0;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+
+.viewPrice .tvPrice {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.viewPrice .tvNum {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: rgba(142, 142, 142, 1);
+}
+
+.other4 {
+  margin-top: 170rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 3rpx;
+  background-color: #EEEEEE;
+}
+
+.viewType {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  height: 86rpx;
+}
+
+.viewType .other5 {
+  margin-top: 30rpx;
+  margin: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.other6 {
+  position: absolute;
+  right: 0;
+  margin: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.other7 {
+  margin-top: 86rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 3rpx;
+  background-color: #EEEEEE;
+}
+
+.viewEdit {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  height: 86rpx;
+}
+
+.viewEdit .other8 {
+  margin-left: 30rpx;
+  margin-top: 27rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+}
+
+.etNote {
+  margin-top: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+
+.other9 {
+  margin-top: 86rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 3rpx;
+  background-color: #EEEEEE;
+}
+
+
+.viewTotal {
+  float: right;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  width: 160rpx;
+  position: relative;
+  height: 86rpx;
+}
+
+.viewTotal .other10 {
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(142, 142, 142, 1);
+}
+
+.tvTotal {
+  margin-left: 19rpx;
+  margin-top: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  font-size: 28rpx;
+  margin-right: 30rpx;
+}
+.btnBuy{
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  height: 78rpx;
+  margin: 30rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  border-radius:8rpx;
+  background-color: #00b89e;
+}

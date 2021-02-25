@@ -1,0 +1,111 @@
+<!--pages/mine/mine.wxml-->
+<!--我的-->
+<view class="mine_login">
+    <!-- 未登录时 -->
+    <view class="mine_login_top">
+      <view class="userinfo">
+        <image class="userinfo-avatar" src="{{avatar}}" bindtap='changeAvatar' mode="aspectFill"></image>
+          <!-- <open-data type="userAvatarUrl" bindtap='upShopLogo' class="userinfo-avatar"></open-data> -->
+      </view>
+      <text class="userinfo-nickname" bindtap="login">{{name}}</text>
+      <!-- <open-data type="userNickName" open-gid="xxxxxx" class="userinfo-nickname"></open-data> -->
+      <navigator class="" target="" url="/pages/set/setlist/setlist" hover-class="navigator-hover" >
+        <image class="set" src="{{set_icon}}" mode="aspectFill"></image>
+      </navigator>
+    </view>
+    <!-- 收款余额 -->
+    <view class="mine_fund">
+      <view class="fund_in">
+        <view class="receivables" bindtap="transactionDetails">
+          <view class="num">{{todayIncome}}</view>
+          <view class="text">待退保证金 (元)</view>
+        </view>
+        <view class="vertical_line"></view>
+        <view class="balance"  bindtap="withdrawal">
+          <view class="num">{{balance}}</view>
+          <view class="text">总共余额 (元)</view>
+        </view>
+      </view>
+    </view>
+    <!-- 我的内容列表 -->
+    <view class="mine_group">
+      <view class="renzheng">
+        <navigator class="" target="" url="/pages/attestationExplain/attestationExplain" hover-class="none" open-type="navigate">
+        <view class="rz_left">
+          <image src="{{rz_icon}}"></image>
+          <text>身份认证</text>
+        </view>
+        <view class="rz_right">
+          <text>去认证</text>
+          <image src="{{arrow}}" class="item_right_arrow"></image>
+        </view>
+        </navigator>
+      </view>
+      <view class="mine_group_item">
+        <navigator class="" target="" url="/pages/myInitiation/myInitiation" hover-class="none" open-type="navigate">
+          <view class="item_left">
+            <image class="" src="{{fq_icon}}" class="item_left_icon"></image>
+            <view class="item_left_text">我发起的</view>
+          </view>
+          <view class="item_right">
+            <image class="" src="{{arrow}}" class="item_right_arrow"></image>
+          </view> 
+        </navigator>
+      </view>
+      <view class="mine_group_item">
+        <navigator class="" target="" url="/pages/myAppointment/myAppointment" hover-class="none" open-type="navigate">
+          <view class="item_left">
+            <image class="" src="{{yyue_icon}}" class="item_left_icon"></image>
+            <view class="item_left_text">我应约的</view>
+          </view>
+          <view class="item_right">
+            <image class=""  src="{{arrow}}" class="item_right_arrow"></image>
+          </view> 
+        </navigator>
+      </view>
+      <!-- <view class="mine_group_item">
+        <navigator class="" target="" url="/pages/myForward/myForward" hover-class="none" open-type="navigate">
+          <view class="item_left">
+            <image class="" src="{{zf_icon}}" class="item_left_icon"></image>
+            <view class="item_left_text">我转发的</view>
+          </view>
+          <view class="item_right">
+            <image class=""  src="{{arrow}}" class="item_right_arrow"></image>
+          </view> 
+        </navigator>
+      </view> -->
+      <!-- <view class="mine_group_item">
+        <navigator class="" target="" url="/pages/myorder/myorder" hover-class="none" open-type="navigate">
+          <view class="item_left">
+            <image class="" src="{{ddan_icon}}" class="item_left_icon"></image>
+            <view class="item_left_text">我的订单</view>
+          </view>
+          <view class="item_right">
+            <image class=""  src="{{arrow}}" class="item_right_arrow"></image>
+          </view> 
+        </navigator>
+      </view> -->
+      <view class="mine_group_item">
+        <navigator class="" target="" url="/pages/myfollow/myfollow" hover-class="none" open-type="navigate">
+          <view class="item_left">
+            <image class="" src="{{gz_icon}}" class="item_left_icon"></image>
+            <view class="item_left_text">我的关注</view>
+          </view>
+          <view class="item_right">
+            <image class=""  src="{{arrow}}" class="item_right_arrow"></image>
+          </view> 
+        </navigator>
+      </view>
+      <!-- <view class="mine_group_item">
+        <navigator class="" target="" url="/pages/myShopOrder/myShopOrder" hover-class="none" open-type="navigate">
+          <view class="item_left">
+            <image class="" src="{{sh_icon}}" class="item_left_icon"></image>
+            <view class="item_left_text">我的商户订单</view>
+          </view>
+          <view class="item_right">
+            <image class=""  src="{{arrow}}" class="item_right_arrow"></image>
+          </view> 
+        </navigator>
+      </view> -->
+    </view>
+</view>

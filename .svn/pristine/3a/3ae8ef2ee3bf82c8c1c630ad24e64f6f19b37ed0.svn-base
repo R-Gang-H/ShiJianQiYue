@@ -1,0 +1,342 @@
+/* pages/userInfo/userInfo.wxss */
+
+.imgUser {
+    width: 98rpx;
+    height: 98rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 30rpx 30rpx 0;
+}
+.infor_top{
+  padding:0 30rpx;
+  margin-top:20rpx;
+}
+.viewHead {
+    font-size: 24rpx;
+    color: #999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.viewHead .viewName {
+    display: flex;
+    align-items: center;
+}
+
+.viewName .tvTitle {
+    /* 文字加粗 */
+    font-weight: bold;
+    /* 字号 */
+    font-size: 28rpx;
+    /* 文字颜色 */
+    color: #333333;
+}
+
+.viewHead .imgRole {
+    height: 29rpx;
+    width: 100rpx;
+    margin-left: 24rpx;
+}
+.btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.follow_btn{
+  font-size:24rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  width:132rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-left: 20rpx;
+}
+.vf-active{
+  border:1px solid #DADADA;
+  color:#333333;
+}
+.vf{
+  color:#333333;
+  border:1px solid #00B69C;
+}
+
+
+
+/* 性别 年龄 */
+
+.tvAge {
+    font-size: 24rpx;
+    color: #999999;
+    margin-top:5rpx;
+}
+
+
+/* 简介 */
+.tvDesc {
+    font-size: 26rpx;
+    color: #333333;
+    margin-top: 23rpx;
+}
+
+
+/* 数量 */
+
+.tvNum {
+    font-weight: bold;
+    font-size: 30rpx;
+    color: #333333;
+    margin-top: 40rpx;
+}
+
+.other1 {
+    font-size: 26rpx;
+    color: #333333;
+    margin-top: 50rpx;
+    padding:0 30rpx;
+}
+
+.photos {
+    padding: 30rpx 0 0 30rpx;
+}
+
+.myphoto .pic {
+    margin-right: 10rpx;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 18rpx;
+}
+
+.imgMy {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.myphoto {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    height: 85rpx;
+    line-height: 85rpx;
+    border-bottom: #EBECF1 1rpx solid;
+    width:100%;
+    background:#fff;
+    z-index: 1;
+    margin-top:30rpx;
+}
+
+.tabs .item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.tabs .item text {
+    font-size: 28rpx;
+    color: #999999;
+    display: inline-block;
+    height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.tabs .itemed text {
+    color: #333333;
+    font-weight: bold;
+}
+
+.tabs .itemed .h_line {
+    width: 66rpx;
+    height: 4rpx;
+    background: #00B89E;
+    position: absolute;
+    bottom: -1rpx;
+    left: 50%;
+    margin-left: -33rpx;
+}
+.item_group {
+    padding: 20rpx 30rpx;
+}
+
+.item_group_list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+}
+
+.item_group_list .icon_pic {
+    width: 130rpx;
+    height:130rpx;
+}
+
+.icon_pic image {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.group_list {
+    margin-left: 25rpx;
+    position: relative;
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5rpx 0 10rpx;
+    min-height:120rpx;
+}
+
+.group_list .list_name {
+    display: flex;
+    justify-content: flex-start;
+    width:100%;
+}
+
+.list_name .type_shop {
+    width: 85rpx;
+    height: 29rpx;
+}
+.list_name .type_shuji {
+    width: 119rpx;
+    height: 29rpx;
+}
+
+.list_name .name {
+    font-size: 28rpx;
+    margin-left: 19rpx;
+    color: #333333;
+    line-height: 38rpx;
+}
+
+.group_list .list_time {
+    font-size: 24rpx;
+    color: #999999;
+    display: flex;
+    justify-content: flex-start;
+    width:100%;
+}
+
+.list_time .time {
+    margin-right: 19rpx;
+}
+
+.group_list .list_content {
+    font-size: 26rpx;
+    color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.red_envelopes {
+    width: 97rpx;
+    height: 29rpx;
+    position: relative;
+}
+
+.red_envelopes image {
+    width: 97rpx;
+    height: 29rpx;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.red_envelopes .money {
+    position: absolute;
+    top: 2rpx;
+    left: 28rpx;
+    font-size: 20rpx;
+    color: #DE0006;
+    width: 66rpx;
+    text-align: center;
+}
+
+.list_distance {
+    position: absolute;
+    bottom: 10rpx;
+    right: 0;
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.broadcast {
+    font-size: 24rpx;
+    color: #666666;
+    margin-top: 8rpx;
+}
+
+.broadcast_play {
+    position: absolute;
+    right: 0;
+    bottom: 50rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+.goods .group_list{
+  padding:0;
+}
+.goods .list_name{
+  display: flex;
+  justify-content: space-between;
+}
+.goods .list_name .name{
+  margin-left: 0;
+}
+.goods .list_name .price{
+  font-size: 28rpx;
+  color:#333333;
+}
+.goods .describe{
+  font-size: 22rpx;
+  color:#999999;
+  margin:8rpx 0 0;
+  max-height: 130rpx;
+  width:100%;
+}
+.goods .tips{
+  width:100%;
+}
+.goods .tips text{
+  font-size: 22rpx;
+  color:#333333;
+  margin-right:25rpx;
+}
+.goods .item_group_list{
+  /* padding:0 0 20rpx;
+  border-bottom:1rpx solid #EEEEEE; */
+}
+.group_bot{
+  display: flex;
+  justify-content: space-between;
+  padding:20rpx 0;
+  align-items: center;
+}
+.group_bot .time{
+  font-size:22rpx;
+  color:#999999;
+}
+.group_bot .operate{
+  display: flex;
+  justify-content: flex-end;
+}
+.line{
+  height:16rpx;
+  background: #F5F5F5;
+  width:100%;
+}
+.group_bot .operate .btn{
+  height:56rpx;
+  line-height: 56rpx;
+  font-size:26rpx;
+  color:#333333;
+  padding:0 30rpx;
+  border:1rpx solid #EEEEEE;
+  border-radius: 30rpx;
+  margin-left: 20rpx;
+}

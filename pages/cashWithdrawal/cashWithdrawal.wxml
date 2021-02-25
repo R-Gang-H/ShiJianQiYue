@@ -1,0 +1,38 @@
+<!--pages/cashWithdrawal/cashWithdrawal.wxml-->
+<form bindsubmit="formSubmit"> 
+  <view class="tixian">
+    <view class="withdrawal_method">
+        <view class="biaoti">选择提现方式</view>
+        <view class="method">
+            <view class="method_list {{isChecked?'is_checked':'normal'}}" bindtap="zfbClick">
+                <image class="zfb" src="../../images/zfb.png"></image>
+                <text class="txt">支付宝</text>
+            </view>
+            <view class="method_list {{isChecked?'normal':'is_checked'}}" bindtap="wxClick">
+                <image class="wx" src="../../images/wx.png"></image>
+                <text class="txt">微信</text>
+            </view>
+        </view>
+    </view>
+    <view class="basic_infor">
+        <view class="infor_lis">
+            <view class="biaoti">提现账号</view>
+             <input name="account" value="{{account}}" placeholder="请输入" />
+        </view>
+        <view class="infor_lis">
+            <view class="biaoti">真实姓名</view>
+             <input name="realName" value="{{realName}}" placeholder="请输入" />
+        </view>
+        <view class="infor_lis">
+            <view class="biaoti">提现金额</view>
+             <input name="amount" value="{{amount}}" placeholder="请输入" />
+        </view>
+    </view>
+    <view class="withdrawal_bot">
+        <view class="kyye">可用余额{{balance}}元</view>
+        <view class="all" bindtap="tixianAll">全部提现</view>
+    </view>
+    <view class="btn"> <button formType="submit" style="width:100%" class="submit">提现</button></view>
+    <view class="note"> 备注：因项目时效问题，暂时提现仅支持客服人员通过关联微信的手机 号或者支付宝账号进行转账！望理解～          </view>
+  </view>
+</form>

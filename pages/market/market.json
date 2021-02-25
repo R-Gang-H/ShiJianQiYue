@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "集市",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 20,
+  "backgroundTextStyle": "dark"
+}

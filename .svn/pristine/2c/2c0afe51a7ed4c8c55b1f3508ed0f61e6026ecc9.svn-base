@@ -1,0 +1,37 @@
+<!--pages/myForward/myForward.wxml-->
+<view class="myforward">
+  <view class="forward_item" wx:for="{{records}}"wx:key="index" data-title="{{ item.productName }}" data-productId="{{ item.productId }}" bindtap="goodDetail">
+    <view class="forward_item_title">
+        <view class="green_lie"></view>
+        <view class="txt">{{item.shopName}}</view>
+    </view>
+    <view class="forward_item_in">
+        <view class="forward_item_cont">
+            <view class="forward_cont_pic">
+                <image class="" src="{{item.productImages}}"></image>
+            </view>
+            <view class="forward_cont_list">
+                <view class="cont_list_title">{{item.productName}}</view>
+                <view class="cont_list_con">{{item.productDesc}}</view>
+            </view>
+        </view>
+        <view class="forward_item_bottom">
+            <view class="item_person">
+                <text class="label">{{buy}}</text>
+                <text class="num">{{item.orderNum}}</text>
+            </view>
+            <view class="bottom_line"></view>
+            <view class="income">
+                <view class="item_person">
+                    <text class="label">{{forward}}</text>
+                    <text class="num">{{item.income}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+  <block wx:if="{{records.length>0}}">
+    <loadingmore  hasmore="{{hasmore}}"></loadingmore>
+  </block>
+</view>
+<emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>

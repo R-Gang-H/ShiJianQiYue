@@ -1,0 +1,315 @@
+<!--pages/myorder/myorder.wxml-->
+<!-- 我的订单 -->
+<!-- tab栏切换 -->
+<view class="tabs">
+  <view class="item {{currentIndex==0?'itemed':''}}" data-index="0" bindtap="changeTab">
+    <text>全部</text>
+    <view class="h_line"></view>
+  </view>
+  <view class="item {{currentIndex==1?'itemed':''}}" data-index="1" bindtap="changeTab">
+    <text>待付款</text>
+    <view class="h_line"></view>
+  </view>
+  <view class="item {{currentIndex==2?'itemed':''}}" data-index="2" bindtap="changeTab">
+    <text>待发货</text>
+    <view class="h_line"></view>
+  </view>
+  <view class="item {{currentIndex==3?'itemed':''}}" data-index="3" bindtap="changeTab">
+    <text>待收货</text>
+    <view class="h_line"></view>
+  </view>
+  <view class="item {{currentIndex==4?'itemed':''}}" data-index="4" bindtap="changeTab">
+    <text>已完成</text>
+    <view class="h_line"></view>
+  </view>
+  <view class="item {{currentIndex==5?'itemed':''}}" data-index="5" bindtap="changeTab">
+    <text>已取消</text>
+    <view class="h_line"></view>
+  </view>
+</view>
+
+<!-- 内容 -->
+<!-- 全部 -->
+<view class="gsjsContain" wx:if="{{currentIndex == 0}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index">
+      <view class="item_group_list">
+        <view class="order_code">
+          <view class="code">订单编号<text class="code_num">{{item.orderNumber}}</text></view>
+          <view class="state">{{item.statusName}}</view>
+        </view>
+        <view class="item_cont" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-orderId="{{ item.orderId }}">
+          <view class="icon_pic">
+            <image src="{{item.productImages}}"></image>
+          </view>
+          <view class="group_list">
+            <view class="list_name">
+              <view class="name">{{item.productNames}}</view>
+              <view class="price">¥{{item.totalPrice}}</view>
+            </view>
+            <view class="list_cont">
+              <view class="describe">{{item.productDesc}}</view>
+              <view class="number"><text class="fh">X</text>{{item.productNum}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="order_bot">
+          <view class="total">
+            <text class="all_num">共{{item.productNum}}件</text>
+            <text class="label">合计</text>
+            <text class="jiage">¥{{item.totalJiage}}</text>
+          </view>
+          <view class="operate">
+            <view wx:if="{{item.status == 0}}" class="btn cancel" data-orderId="{{ item.orderId }}" bindtap="cancelOrder">取消订单</view>
+            <view wx:if="{{item.status == 0}}" class="btn go" data-orderId="{{ item.orderId }}" data-price="{{ item.totalJiage }}" bindtap="goPay">
+                去支付
+            </view>
+            <view wx:if="{{item.status == 3}}" class="btn go" data-orderId="{{ item.orderId }}" bindtap="confirmReceipt">确认收货</view>
+            <view wx:if="{{item.status == 4}}" class="btn go" data-orderId="{{ item.orderId }}" data-productIds="{{item.productIds}}" bindtap="goComment">去评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>
+<!-- 待付款 -->
+<view class="gsjsContain" wx:if="{{currentIndex == 1}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index">
+      <view class="item_group_list">
+        <view class="order_code">
+          <view class="code">订单编号<text class="code_num">{{item.orderNumber}}</text></view>
+          <view class="state">{{item.statusName}}</view>
+        </view>
+        <view class="item_cont" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-orderId="{{ item.orderId }}">
+          <view class="icon_pic">
+            <image src="{{item.productImages}}"></image>
+          </view>
+          <view class="group_list">
+            <view class="list_name">
+              <view class="name">{{item.productNames}}</view>
+              <view class="price">¥{{item.totalPrice}}</view>
+            </view>
+            <view class="list_cont">
+              <view class="describe">{{item.productDesc}}</view>
+              <view class="number"><text class="fh">X</text>{{item.productNum}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="order_bot">
+          <view class="total">
+            <text class="all_num">共{{item.productNum}}件</text>
+            <text class="label">合计</text>
+            <text class="jiage">¥{{item.totalJiage}}</text>
+          </view>
+          <view class="operate">
+            <view wx:if="{{item.status == 0}}" class="btn cancel" data-orderId="{{ item.orderId }}" bindtap="cancelOrder">取消订单</view>
+            <view wx:if="{{item.status == 0}}" class="btn go" data-orderId="{{ item.orderId }}" data-price="{{ item.totalJiage }}" bindtap="goPay">
+                去支付
+            </view>
+            <view wx:if="{{item.status == 3}}" class="btn go" data-orderId="{{ item.orderId }}" bindtap="confirmReceipt">确认收货</view>
+            <view wx:if="{{item.status == 4}}" class="btn go" data-orderId="{{ item.orderId }}" data-productIds="{{item.productIds}}" bindtap="goComment">去评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>
+<!-- 待发货 -->
+<view class="gsjsContain" wx:if="{{currentIndex == 2}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index">
+      <view class="item_group_list">
+        <view class="order_code">
+          <view class="code">订单编号<text class="code_num">{{item.orderNumber}}</text></view>
+          <view class="state">{{item.statusName}}</view>
+        </view>
+        <view class="item_cont" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-orderId="{{ item.orderId }}">
+          <view class="icon_pic">
+            <image src="{{item.productImages}}"></image>
+          </view>
+          <view class="group_list">
+            <view class="list_name">
+              <view class="name">{{item.productNames}}</view>
+              <view class="price">¥{{item.totalPrice}}</view>
+            </view>
+            <view class="list_cont">
+              <view class="describe">{{item.productDesc}}</view>
+              <view class="number"><text class="fh">X</text>{{item.productNum}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="order_bot">
+          <view class="total">
+            <text class="all_num">共{{item.productNum}}件</text>
+            <text class="label">合计</text>
+            <text class="jiage">¥{{item.totalJiage}}</text>
+          </view>
+          <view class="operate">
+            <view wx:if="{{item.status == 0}}" class="btn cancel" data-orderId="{{ item.orderId }}" bindtap="cancelOrder">取消订单</view>
+            <view wx:if="{{item.status == 0}}" class="btn go" data-orderId="{{ item.orderId }}" data-price="{{ item.totalJiage }}" bindtap="goPay">
+                去支付
+            </view>
+            <view wx:if="{{item.status == 3}}" class="btn go" data-orderId="{{ item.orderId }}" bindtap="confirmReceipt">确认收货</view>
+            <view wx:if="{{item.status == 4}}" class="btn go" data-orderId="{{ item.orderId }}" data-productIds="{{item.productIds}}" bindtap="goComment">去评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>
+<!-- 待收货 -->
+<view class="gsjsContain" wx:if="{{currentIndex == 3}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index">
+      <view class="item_group_list">
+        <view class="order_code">
+          <view class="code">订单编号<text class="code_num">{{item.orderNumber}}</text></view>
+          <view class="state">{{item.statusName}}</view>
+        </view>
+        <view class="item_cont" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-orderId="{{ item.orderId }}">
+          <view class="icon_pic">
+            <image src="{{item.productImages}}"></image>
+          </view>
+          <view class="group_list">
+            <view class="list_name">
+              <view class="name">{{item.productNames}}</view>
+              <view class="price">¥{{item.totalPrice}}</view>
+            </view>
+            <view class="list_cont">
+              <view class="describe">{{item.productDesc}}</view>
+              <view class="number"><text class="fh">X</text>{{item.productNum}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="order_bot">
+          <view class="total">
+            <text class="all_num">共{{item.productNum}}件</text>
+            <text class="label">合计</text>
+            <text class="jiage">¥{{item.totalJiage}}</text>
+          </view>
+          <view class="operate">
+            <view wx:if="{{item.status == 0}}" class="btn cancel" data-orderId="{{ item.orderId }}" bindtap="cancelOrder">取消订单</view>
+            <view wx:if="{{item.status == 0}}" class="btn go" data-orderId="{{ item.orderId }}" data-price="{{ item.totalJiage }}" bindtap="goPay">
+                去支付
+            </view>
+            <view wx:if="{{item.status == 3}}" class="btn go" data-orderId="{{ item.orderId }}" bindtap="confirmReceipt">确认收货</view>
+            <view wx:if="{{item.status == 4}}" class="btn go" data-orderId="{{ item.orderId }}" data-productIds="{{item.productIds}}" bindtap="goComment">去评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>
+<!-- 已完成 -->
+<view class="gsjsContain" wx:if="{{currentIndex == 4}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index">
+      <view class="item_group_list">
+        <view class="order_code">
+          <view class="code">订单编号<text class="code_num">{{item.orderNumber}}</text></view>
+          <view class="state">{{item.statusName}}</view>
+        </view>
+        <view class="item_cont" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-orderId="{{ item.orderId }}">
+          <view class="icon_pic">
+            <image src="{{item.productImages}}"></image>
+          </view>
+          <view class="group_list">
+            <view class="list_name">
+              <view class="name">{{item.productNames}}</view>
+              <view class="price">¥{{item.totalPrice}}</view>
+            </view>
+            <view class="list_cont">
+              <view class="describe">{{item.productDesc}}</view>
+              <view class="number"><text class="fh">X</text>{{item.productNum}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="order_bot">
+          <view class="total">
+            <text class="all_num">共{{item.productNum}}件</text>
+            <text class="label">合计</text>
+            <text class="jiage">¥{{item.totalJiage}}</text>
+          </view>
+          <view class="operate">
+            <view wx:if="{{item.status == 0}}" class="btn cancel" data-orderId="{{ item.orderId }}" bindtap="cancelOrder">取消订单</view>
+            <view wx:if="{{item.status == 0}}" class="btn go" data-orderId="{{ item.orderId }}" data-price="{{ item.totalJiage }}" bindtap="goPay">
+                去支付
+            </view>
+            <view wx:if="{{item.status == 3}}" class="btn go" data-orderId="{{ item.orderId }}" bindtap="confirmReceipt">确认收货</view>
+            <view wx:if="{{item.status == 4}}" class="btn go" data-orderId="{{ item.orderId }}" data-productIds="{{item.productIds}}" bindtap="goComment">去评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>
+<!-- 已取消 -->
+<view class="gsjsContain" wx:if="{{currentIndex == 5}}">
+  <view class="item_in">
+    <view class="item_group" wx:for="{{records}}" wx:key="index">
+      <view class="item_group_list">
+        <view class="order_code">
+          <view class="code">订单编号<text class="code_num">{{item.orderNumber}}</text></view>
+          <view class="state">{{item.statusName}}</view>
+        </view>
+        <view class="item_cont" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-orderId="{{ item.orderId }}">
+          <view class="icon_pic">
+            <image src="{{item.productImages}}"></image>
+          </view>
+          <view class="group_list">
+            <view class="list_name">
+              <view class="name">{{item.productNames}}</view>
+              <view class="price">¥{{item.totalPrice}}</view>
+            </view>
+            <view class="list_cont">
+              <view class="describe">{{item.productDesc}}</view>
+              <view class="number"><text class="fh">X</text>{{item.productNum}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="order_bot">
+          <view class="total">
+            <text class="all_num">共{{item.productNum}}件</text>
+            <text class="label">合计</text>
+            <text class="jiage">¥{{item.totalJiage}}</text>
+          </view>
+          <view class="operate">
+            <view wx:if="{{item.status == 0}}" class="btn cancel" data-orderId="{{ item.orderId }}" bindtap="cancelOrder">取消订单</view>
+            <view wx:if="{{item.status == 0}}" class="btn go" data-orderId="{{ item.orderId }}" data-price="{{ item.totalJiage }}" bindtap="goPay">
+                去支付
+            </view>
+            <view wx:if="{{item.status == 3}}" class="btn go" data-orderId="{{ item.orderId }}" bindtap="confirmReceipt">确认收货</view>
+            <view wx:if="{{item.status == 4}}" class="btn go" data-orderId="{{ item.orderId }}" data-productIds="{{item.productIds}}" bindtap="goComment">去评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{records.length>0}}">
+      <loadingmore hasmore="{{hasmore}}"></loadingmore>
+    </block>
+  </view>
+  <emptypage wx:if="{{hasempty}}" hasempty="{{hasempty}}"></emptypage>
+</view>
+
+

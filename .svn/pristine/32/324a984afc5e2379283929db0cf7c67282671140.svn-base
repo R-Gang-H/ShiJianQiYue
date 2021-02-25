@@ -1,0 +1,38 @@
+<!--pages/homeSearch/homeSearch.wxml-->
+<!-- 信息列表 -->
+<view class="searchBarView">
+<input class="searchBar" focus="{{becomeFirst}}" bindinput="textFieldDidChange"  bindconfirm="searchBarDidSearch" placeholder="请输入关键词"></input>
+</view>
+
+<view class="scrollView">
+<!-- 每个格子 -->
+<block wx:for = "{{ messages }}" wx:key = "*this">
+<view class="cell" catchtap="didSelectedCell" data-title="{{ item.infoTitle }}" data-infoId="{{ item.infoId }}">
+
+<!-- 图片 -->
+<image class="cellImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.infoImages}}"></image>
+
+<!-- 标题 -->
+<label class="titleLabel">
+<image class="shImageView" src="/images/ic_shop_certifi.png" wx:if = "{{item.isSh == 1 }}">  </image>
+<image class="sjImageView" src="/images/ic_sj_certifi.png" wx:if = "{{item.isSj == 1}}" ></image>
+{{item.infoTitle}}
+</label>
+
+<!-- 发布时间 距离结束时间 -->
+
+<label class="createTimeLabel">
+{{item.createTime}}
+<label class="expireTimeLabel">
+{{item.customTime}}
+</label>
+</label>
+
+<label class="distanceLabel">
+{{item.juli}}
+</label>
+
+</view>
+
+</block>
+</view>

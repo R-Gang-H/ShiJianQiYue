@@ -1,0 +1,26 @@
+<view class='navbar-wrap' 
+  style='height:{{navbarHeight}}px;padding-top:{{statusBarHeight}}px;background:{{navbarData.bgColor ? navbarData.bgColor : "#fff"}}'>  
+  <view class="navbar-text"
+    style='line-height:{{navbarBtn.height + navbarBtn.top}}px;'>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+      <view class='nav-title header_tabs'>
+        <view class="item {{curIndex==0?'itemed':''}}" data-index="0" bindtap="changeheadTab">
+          <text> {{navbarData.title1}}</text>
+        </view>
+        <view class="item {{curIndex==1?'itemed':''}}" data-index="1" bindtap="changeheadTab">
+          <text> {{navbarData.title2}}</text>
+      </view>
+      </view>
+    </view>
+  </view>
+  <view class="navbar-icon"
+    wx:if='{{navbarData.showCapsule ? navbarData.showCapsule : true}}'
+    style="top:{{navbarBtn.top + statusBarHeight}}px;left:{{navbarBtn.right}}px;height:{{navbarBtn.height}}px;}}"> 
+      <image wx:if='{{haveBack}}' bindtap="_goBack" class="floatL" src="{{back}}"></image>      
+      <!-- <view wx:if='{{haveBack}}' class="floatL" style="border-color:{{navbarData.borderColor ? navbarData.borderColor : 'rgba(0,0,0,0.3)'}}"></view> -->
+      <!-- <image bindtap="_goHome" src="/img/navbar_home_{{navbarData.iconColor ? navbarData.iconColor : 'black'}}.png"></image> -->
+  </view>
+</view>
+<view class="navbar-loading" style='height:{{navbarHeight}}px;line-height:{{navbarHeight}}px;'>
+  <!-- <text>...</text> -->
+</view>

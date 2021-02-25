@@ -1,0 +1,303 @@
+/* pages/redPacketDetail/redPacketDetail.wxss */
+
+/* 轮播图 */
+
+.contentView {
+  
+  padding-bottom: 128rpx;
+}
+
+.banner {
+  width: 750rpx;
+  height: 938rpx;
+}
+
+.bannerItem {
+  width: 750rpx;
+  height: 938rpx;
+}
+
+/* 简介 */
+
+.introlView {
+  display: flex;
+  flex-direction: column;
+}
+
+.introlTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 58rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.introlContentLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  width: 684rpx;
+  color: #333;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+}
+
+/* 到期时间 */
+
+.timeLabel {
+  right: 31rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  margin-top: 65rpx;
+  color: #00b89e;
+  position: absolute;
+}
+
+/* 地点 */
+
+.locationView {
+  display: flex;
+  flex-direction: column;
+}
+
+.locationTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 49rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.locationContentLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  width: 650rpx;
+  color: #333;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+}
+
+.goThereButton {
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  right: 30rpx;
+  margin-top: 110rpx;
+}
+
+/* 约会时间 */
+
+.timeView {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.timeContentLabel {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 300;
+  width: 684rpx;
+  color: #333;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+}
+
+/* 保证金 */
+
+.moneyView {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 发布者 */
+
+.publisherView {
+  display: flex;
+  flex-direction: column;
+}
+
+.publisherTitleLabel {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+
+.publisherBorderView {
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #e6e6e6;
+  border-radius: 8rpx;
+  width: 690rpx;
+  height: 110rpx;
+  margin-left: 30rpx;
+  margin-top: 26rpx;
+}
+
+.publisherHeadImageView {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  margin-left: 22rpx;
+  margin-top: 21rpx;
+}
+
+.publisherNameLabel {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: #333;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+}
+
+.attentionButton {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #00b89e;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  width: 131rpx;
+  height: 56rpx;
+  right: 50rpx;
+  margin-top: 27rpx;
+  color: #333;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 二维码 */
+
+.QRCodeView {
+  background-color: #f5f5f5;
+  left: 0rpx;
+  right: 0rpx;
+  height: 500rpx;
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundWhiteView {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 710rpx;
+  height: 460rpx;
+  align-items: center;
+}
+
+.canvas {
+  width: 230rpx;
+  height: 230rpx;
+  background-color: red;
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.codeTitle {
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: 333;
+}
+
+.codeMessage {
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+  width: 670rpx;
+  text-align: center;
+}
+
+/* 底部悬浮 */
+
+.bottomView {
+  box-shadow: 0px 0px 20px 0px rgba(169, 169, 169, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 128rpx;
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.joinButton {
+  width: 690rpx;
+  height: 68rpx;
+  background: rgba(0, 184, 158, 1);
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 30rpx;
+}
+
+.cancel {
+  width: 690rpx;
+  height: 68rpx;
+  background: rgba(0, 184, 158, 1);
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 30rpx;
+}
+.cancelIng {
+  background: #e6e6e6;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 38rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}

@@ -1,0 +1,45 @@
+/* pages/transactionDetails/transactionDetails.wxss */
+.details {
+  padding: 0 30rpx;
+}
+
+.details .details_list {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.details_list .list_top {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.list_top .name {
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.list_top .money {
+  font-size: 32rpx;
+  color: #333333;
+  right: 0;
+  position: absolute;
+  margin-right: 40rpx;
+
+}
+
+.list_top .isClear {
+  width: 27rpx;
+  height: 27rpx;
+  right: 0;
+  position: absolute;
+  margin-right: 10rpx;
+  margin-top: 9rpx;
+
+
+}
+
+.time {
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 15rpx;
+}

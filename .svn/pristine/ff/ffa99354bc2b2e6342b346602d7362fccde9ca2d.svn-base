@@ -1,0 +1,76 @@
+/* pages/groupInfo/groupInfo.wxss */
+
+.member {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.groupMember image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  /* float: left; */
+  margin: 25rpx;
+  background-color: #e8e8e8;
+}
+
+.groupName {
+  height: 88rpx;
+  display: flex;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.groupName text {
+  width: 50%;
+  display: inline-block;
+}
+
+.groupName .nice {
+  margin-left: 30rpx;
+  font-weight: bold;
+}
+
+.groupName .name {
+  margin-right: 50rpx;
+  text-align: right;
+}
+
+.groupNotice {
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 30rpx;
+}
+
+.groupNotice .noti {
+  margin-left: 30rpx;
+  font-weight: bold;
+}
+
+.groupNotice .notiContent {
+  margin: 30rpx;
+  font-size: 26rpx;
+  color: #333;
+  font-weight:initial;
+}
+
+.quitGroup {
+  display: flex;
+  justify-content: center;
+}
+
+.quitGroup text {
+  background-color: #f6f6f6;
+  width: 90%;
+  height: 80rpx;
+  margin-bottom: 30rpx;
+  line-height: 80rpx; /** 垂直居中 **/
+  text-align: center; /** 水平居中 **/
+  font-size: 30rpx;
+  color: #333;
+  position: fixed;
+  bottom: 0;
+}

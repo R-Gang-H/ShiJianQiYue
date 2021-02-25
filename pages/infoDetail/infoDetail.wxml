@@ -1,0 +1,186 @@
+<!--pages/infoDetail/infoDetail.wxml-->
+
+<!-- 轮播图 -->
+
+<view class="contentView">
+
+	<view class="bannerView">
+
+		<swiper class="banner" indicator-dots="ture" indicator-color="#87E1D5" indicator-active-color="#00BAA1" autoplay="ture" duration="500" interval="2000" circular="true">
+			<block wx:for="{{ model.infoImages }}" wx:key="*this">
+				<swiper-item>
+					<image class="bannerItem" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item }}" mode="aspectFill"> </image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+
+
+	<!-- 简介 -->
+	<view class="introlView">
+
+		<label class="introlTitleLabel">
+			简介
+		</label>
+
+		<label class="introlContentLabel">
+			{{ model.infoDesc}}
+		</label>
+
+		<label class="timeLabel">
+			{{ model.customTime }}
+		</label>
+
+	</view>
+
+	<view class="locationView">
+
+		<label class="locationTitleLabel">
+			约会地点
+		</label>
+
+		<label class="locationContentLabel">
+			{{ model.infoAddress}}
+		</label>
+
+		<image class="goThereButton" src="../../images/location_icon.png" catchtap="goLocation">
+		</image>
+	</view>
+
+	<!-- 约会时间 -->
+
+	<view class="timeView">
+
+		<label class="timeTitleLabel">
+			约会时间
+		</label>
+
+		<label class="timeContentLabel">
+			{{ model.customDate }}
+		</label>
+	</view>
+
+	<!-- 约会时间 -->
+
+	<view class="moneyView">
+
+		<label class="timeTitleLabel">
+			应约保证金
+		</label>
+
+		<label class="timeContentLabel">
+			{{ model.infoOtherBzj }}元
+		</label>
+	</view>
+
+
+	<!-- 我发布的信息情况下的应约者列表 -->
+
+
+	<view class="myInfoJoinView" wx:if="{{ isMy }}">
+
+		<label class="timeTitleLabel">
+			应约者（{{model.joinNum}}）人
+		</label>
+
+		<view class="publisherBorderView" wx:for="{{ model.joinList }}" wx:key="*this">
+
+			<image class="publisherHeadImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ item.userAvatar }}" catchtap="goPersonDetail" data-userid="{{ item.userId }}">
+			</image>
+			<label class="publisherNameLabel">
+				{{ item.userName }}
+			</label>
+
+			<view class="confirmJoinButton" catchtap="confirmJoinButton" data-model="{{item}}">
+				{{ item.status == 1? "已应约" : "确认应约" }}
+
+			</view>
+		</view>
+
+	</view>
+
+	<!-- 发布者 -->
+
+	<view class="publisherView" wx:if="{{ !isMy }}">
+
+		<label class="publisherTitleLabel">
+			发布者
+		</label>
+
+		<view class="publisherBorderView">
+
+			<image class="publisherHeadImageView" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ model.userAvatar }}" catchtap="goPersonDetail" data-userid="{{model.userId}}">
+			</image>
+			<label class="publisherNameLabel">
+				{{ model.userName }}
+			</label>
+
+			<view class="attentionButton" catchtap="attentionButtonDidClicked">
+				{{ model.isFollow == 1? "取消关注" : "关注" }}
+
+			</view>
+		</view>
+	</view>
+
+	<!-- 应约者  已应约的人可以看 -->
+
+
+	<view class="joinListView" wx:if="{{ showJoinList }}">
+
+		<label class="joinListTitleLabel">
+			应约者
+		</label>
+		<view class="joinListGroup">
+
+			<view class="joinListItem" wx:for="{{model.joinList}}" wx:key="*this">
+				<image class="itemImage" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{item.userAvatar}}"></image>
+				<label class="itemLabel">
+					{{item.userName}}
+				</label>
+			</view>
+
+		</view>
+	</view>
+
+
+</view>
+
+
+
+
+<!-- 底部view -->
+<view class="bottomView">
+
+	<!-- 显示应约按钮和应约者,此时为为应约状态 -->
+	<view class="needJoinView" wx:if="{{ needJoin }}">
+		<label class="joinNumLabel">
+			应约者（ {{ model.joinNum }} ）
+		</label>
+		<view class="joinButton" catchtap="joinInfo">
+			应约
+		</view>
+	</view>
+
+	<!-- 显示已应约的样式 -->
+	<view class="joinedView" wx:if="{{ showJoinList }}">
+		<view class="joinGroupButton" catchtap="goGroup">
+			进入群聊
+		</view>
+		<view class="chatButton" catchtap="goC2C">
+			和发起人聊天
+		</view>
+	</view>
+
+	<!-- 显示我发起的样式 -->
+	<view class="MyInfoView" wx:if="{{ isIng }}">
+		<view class="cancelButton" catchtap="cancelInfomation">
+			撤销
+		</view>
+		<view class="myChatButton" catchtap="goGroup">
+			进入群聊
+		</view>
+	</view>
+
+	<view class="cancelIng" wx:if="{{ isCancel }}">撤销中</view>
+	<view class="cancelIng" wx:if="{{ isEnd }}">已结束</view>
+</view>

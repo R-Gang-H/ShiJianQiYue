@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "转发",
+  "usingComponents": {
+    "emptypage": "/components/emptypage/emptypage"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

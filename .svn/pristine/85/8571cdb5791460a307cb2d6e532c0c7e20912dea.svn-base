@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "emptypage": "/components/emptypage/emptypage",
+    "loadingmore": "/components/loadingmore/loadingmore"
+  },
+  "navigationStyle":"default",
+  "navigationBarTitleText": "圈子 ",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

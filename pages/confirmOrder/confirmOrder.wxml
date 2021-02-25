@@ -1,0 +1,46 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<!-- 地址栏 -->
+<view class="other1"></view>
+<navigator class="" target="" url="/pages/set/receivingAddr/receivingAddr?isConfirmOrder={{true}}" hover-class="none" open-type="navigate">
+	<view class="viewAddress">
+		<view class="viewHead">
+			<view class="viewTitle">
+				<view class="tvTitle">{{addressName}}</view>
+				<view class="tvPhone">{{addressMobile}}</view>
+			</view>
+			<view class="tvAddress">{{addressAddress}} </view>
+		</view>
+		<image class="imgShare" src="/images/arrow_right.png" hidden="{{goods.shareReward==0}}"> </image>
+	</view>
+</navigator>
+<view class="other2"></view>
+<!-- 商品 -->
+<view class="tvShopName">{{goods.shopName}}</view>
+<view class="other3"></view>
+<view class="viewGoods">
+	<image class="imgGoods" src="http://sjqy-bj-oss.oss-cn-beijing.aliyuncs.com{{ goods.productImages }}"></image>
+	<view class="viewName">
+		<view class="tvName">{{goods.productName}}</view>
+		<view class="tvDesc">{{goods.productDesc}}</view>
+	</view>
+	<view class="viewPrice">
+		<view class="tvPrice">{{goods.price}}</view>
+		<view class="tvNum"> x 1</view>
+	</view>
+</view>
+<view class="other4"></view>
+<view class="viewType">
+	<view class="other5">配送方式</view>
+	<view class="other6">快递</view>
+</view>
+<view class="other7"></view>
+<view class="viewEdit">
+	<view class="other8">订单备注</view>
+	<input class="etNote" placeholder="选填，请先和商家协商一致"></input>
+</view>
+<view class="other9"></view>
+<view class="viewTotal">
+	<view class="other10">合计</view>
+	<view class="tvTotal">{{goods.price}}</view>
+</view>
+<view class="btnBuy" catchtap="addOrder">立即购买</view>

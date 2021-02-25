@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/confirmDue/confirmDue",
+    "pages/market/market",
+    "pages/group/group",
+    "pages/chat/chat",
+    "pages/pay/pay",
+    "pages/login/login",
+    "pages/mine/mine",
+    "pages/outurl/ios/ios",
+    "pages/outurl/android/android",
+    "pages/attestationExplain/attestationExplain",
+    "pages/set/setlist/setlist",
+    "pages/cashWithdrawal/cashWithdrawal",
+    "pages/explain/explain",
+    "pages/withdrawal/withdrawal",
+    "pages/transactionDetails/transactionDetails",
+    "pages/myorder/myorder",
+    "pages/myShopOrder/myShopOrder",
+    "pages/shopOrderDetail/shopOrderDetail",
+    "pages/myfollow/myfollow",
+    "pages/set/personalInfor/personalInfor",
+    "pages/orderDetail/orderDetail",
+    "pages/orderComment/orderComment",
+    "pages/set/useragreement/useragreement",
+    "pages/set/aboutUs/aboutUs",
+    "pages/set/complaint/complaint",
+    "pages/set/question/question",
+    "pages/set/receivingAddr/receivingAddr",
+    "pages/set/newAddress/newAddress",
+    "pages/set/profile/profile",
+    "pages/confirmOrder/confirmOrder",
+    "pages/userInfo/userInfo",
+    "pages/setUserInfo/setUserInfo",
+    "pages/myForward/myForward",
+    "pages/myAppointment/myAppointment",
+    "pages/myInitiation/myInitiation",
+    "pages/logs/logs",
+    "pages/broadcast/broadcast",
+    "pages/homeSearch/homeSearch",
+    "pages/redPacketDetail/redPacketDetail",
+    "pages/shield/shield",
+    "pages/redPacket/redPacket",
+    "pages/groupInfo/groupInfo",
+    "pages/marketDeatil/marketD",
+    "pages/infoDetail/infoDetail",
+    "pages/sharePrompt/sharePrompt",
+    "pages/broadcastDetail/broadcastDetail",
+    "pages/shareConversation/shareConversation",
+    "pages/imgDetails/imgDetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#00B89E",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "契约",
+        "iconPath": "images/index_icon.png",
+        "selectedIconPath": "images/index_selected_icon.png"
+      },
+      {
+        "pagePath": "pages/market/market",
+        "text": "集市",
+        "iconPath": "images/market_icon.png",
+        "selectedIconPath": "images/market_selected_icon.png"
+      },
+      {
+        "pagePath": "pages/group/group",
+        "text": "信息",
+        "iconPath": "images/group_icon.png",
+        "selectedIconPath": "images/group_selected_icon.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine_icon.png",
+        "selectedIconPath": "images/mine_selected_icon.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于查看附近的信息、红包、广播等"
+    }
+  }
+}

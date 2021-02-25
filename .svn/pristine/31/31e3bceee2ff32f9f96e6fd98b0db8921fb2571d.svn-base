@@ -1,0 +1,15 @@
+<!--pages/audio/audio.wxml-->
+    <view class="container">
+      <view class="list" wx:for="{{list}}" wx:key="key" wx:for-item="item" wx:for-index="index">
+        <!-- <view class="praise {{item.isData? 'changed': ''}}" hover-class="hover_praise" bindtap="praiseThis" data-curIndex="{{index}}">{{item.praise}}</view> -->
+        <!-- <audio src="{{item.praise}}" action="{{action}}" ></audio>
+            <image bindtap="audioPlay" class='audio broadcast_play' src="{{item.isData?'../../images/iv_plau.png':'../../images/ic_paush.png'}}" data-curIndex="{{index}}"></image> -->
+
+            <audio src="{{item.praise}}" id ="myAudio{{index}}"  ></audio>
+            <image bindtap="audioPlay" class='audio broadcast_play' src="{{item.isData?'../../images/iv_plau.png':'../../images/ic_paush.png'}}" data-curIndex="{{index}}" data-id="{{index}}"></image>
+        <view class="author">{{item.author}}</view>
+        <view class="info">{{item.info}}</view>
+      </view>
+    </view>
+
+

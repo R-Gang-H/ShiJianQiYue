@@ -1,0 +1,39 @@
+<!--pages/set/personalInfor/personalInfor.wxml-->
+<view class="personal_infor">
+  <form class="page__bd" bindsubmit="formSubmit">
+    <view ew class="infor_list">
+      <view class="list_label">昵称</view>
+      <view class="list_right">
+        <input class="weui-input" name="name" value="{{name}}"/>
+      </view>
+    </view>
+    <view ew class="infor_list disabled">
+      <view class="list_label">性别</view>
+      <view class="list_right" bindtap="prohibitsex">
+        <view class="sex">{{sex}}</view>
+        <view class="right_arrow">
+          <image src="{{arrow}}"></image>
+        </view>
+      </view>
+    </view>
+    <view ew class="infor_list disabled">
+      <view class="list_label">生日</view>
+      <view class="list_right" bindtap="prohibitbirthday">
+        <view class="birthday">{{birthday}}</view>
+        <view class="right_arrow">
+          <image src="{{arrow}}"></image>
+        </view>
+      </view>
+    </view>
+    <view ew class="infor_list jianjie" bindtap="bindProfile">
+      <view class="list_label">简介</view>
+      <view class="list_right">
+        <view class="intro" data-name="{{intro}}" >{{intro}}</view>
+        <view class="right_arrow">
+          <image src="{{arrow}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="sub"><button style="width:100%" form-type='submit' class="submit">提交</button></view>
+  </form>
+</view>

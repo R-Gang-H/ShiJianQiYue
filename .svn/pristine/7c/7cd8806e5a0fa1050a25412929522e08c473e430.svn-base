@@ -1,0 +1,6 @@
+<!--components/emptyPage/emptyPage.wxml-->
+<view class="empty">
+    <image class="" src="../../images/empty.png"></image>
+    <view class="text">哎呀，这里啥都没有 ~</view>
+</view>
+
